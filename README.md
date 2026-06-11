@@ -1,4 +1,4 @@
-Deployed on: https://dishant-08.github.io/html-tcss/
+Deployed on: https://dishant-08.github.io
 
 # Dishant Sahu - Portfolio
 
