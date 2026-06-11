@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Dishant Sahu — Full-Stack Developer</title>
+  <meta name="description" content="Full-stack developer building production SaaS: JŪMA (healthcare payments), WittyByte (AI interview prep), and realtime fleet telematics tracking 50,000+ vehicles. TypeScript, Next.js, Go, PostgreSQL." />
+  <meta name="author" content="Dishant Sahu" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://dishant-08.github.io/html-tcss/" />
+
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F7F3EC" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#16130F" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://dishant-08.github.io/html-tcss/" />
+  <meta property="og:title" content="Dishant Sahu — Full-Stack Developer" />
+  <meta property="og:description" content="Production SaaS: healthcare payments, AI interview prep, and realtime fleet telematics. TypeScript · Next.js · Go · PostgreSQL." />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Dishant Sahu — Full-Stack Developer" />
+  <meta name="twitter:description" content="Production SaaS: healthcare payments, AI interview prep, and realtime fleet telematics." />
+
+  <!-- Set theme before first paint to avoid flash -->
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem("theme");
+        var dark = stored ? stored === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.classList.toggle("dark", dark);
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340..600;1,9..144,340..600&family=Instrument+Sans:wght@400;500;600&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="dist/output.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Dishant Sahu",
+    "jobTitle": "Full-Stack Developer",
+    "url": "https://dishant-08.github.io/html-tcss/",
+    "email": "mailto:dishant.sahu07@gmail.com",
+    "worksFor": { "@type": "Organization", "name": "404Minds Technologies" },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "Veer Surendra Sai University of Technology" },
+    "address": { "@type": "PostalAddress", "addressLocality": "Sambalpur", "addressRegion": "Odisha", "addressCountry": "IN" },
+    "sameAs": [
+      "https://github.com/dishant-08",
+      "https://www.linkedin.com/in/dishant-sahu-b18240244/",
+      "https://twitter.com/sahu_dishant"
+    ]
+  }
+  </script>
+</head>
+
+<body class="min-h-screen">
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-accent focus:text-paper focus:px-4 focus:py-2 focus:rounded">
+    Skip to content
+  </a>
+
+  <!-- ─── Mobile top bar ─────────────────────────────────────────────────── -->
+  <header class="lg:hidden sticky top-0 z-40 flex items-center justify-between border-b border-line bg-paper/95 backdrop-blur px-5 py-3">
+    <a href="#top" class="font-display font-semibold text-lg tracking-tight">Dishant&nbsp;Sahu</a>
+    <div class="flex items-center gap-2">
+      <button id="themeToggleMobile" class="theme-toggle p-2 text-mute hover:text-ink transition-colors" aria-label="Toggle dark mode" aria-pressed="false">
+        <svg class="icon-sun h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4m11.4-11.4 1.4-1.4"/></svg>
+        <svg class="icon-moon h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+      </button>
+      <button id="menuToggle" class="p-2 text-mute hover:text-ink transition-colors" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <nav id="mobileMenu" class="lg:hidden hidden sticky top-[49px] z-40 border-b border-line bg-paper px-5 py-4" aria-label="Site sections">
+    <a href="#work"       class="rail-link"><span class="no">01</span>Work</a>
+    <a href="#experience" class="rail-link"><span class="no">02</span>Experience</a>
+    <a href="#skills"     class="rail-link"><span class="no">03</span>Skills</a>
+    <a href="#education"  class="rail-link"><span class="no">04</span>Education</a>
+    <a href="#contact"    class="rail-link"><span class="no">05</span>Contact</a>
+  </nav>
+
+  <!-- ─── Left rail (desktop) ────────────────────────────────────────────── -->
+  <aside class="hidden lg:flex fixed inset-y-0 left-0 w-[19rem] flex-col justify-between border-r border-line px-10 py-12 z-30">
+    <div>
+      <a href="#top" class="block font-display font-semibold leading-[0.95] text-[2.6rem] tracking-tight">
+        Dishant<br />Sahu
+      </a>
+      <p class="meta mt-4">Full-Stack Developer</p>
+
+      <nav class="mt-14" aria-label="Site sections">
+        <a href="#work"       class="rail-link" data-spy="work"><span class="no">01</span>Work</a>
+        <a href="#experience" class="rail-link" data-spy="experience"><span class="no">02</span>Experience</a>
+        <a href="#skills"     class="rail-link" data-spy="skills"><span class="no">03</span>Skills</a>
+        <a href="#education"  class="rail-link" data-spy="education"><span class="no">04</span>Education</a>
+        <a href="#contact"    class="rail-link" data-spy="contact"><span class="no">05</span>Contact</a>
+      </nav>
+    </div>
+
+    <div class="space-y-6">
+      <button id="themeToggle" class="theme-toggle group flex items-center gap-3 font-mono text-xs uppercase tracking-widest text-mute hover:text-ink transition-colors" aria-pressed="false">
+        <span class="grid place-items-center h-8 w-8 border border-line rounded-full group-hover:border-accent transition-colors">
+          <svg class="icon-sun h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4m11.4-11.4 1.4-1.4"/></svg>
+          <svg class="icon-moon h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+        </span>
+        <span class="toggle-label">Dark mode</span>
+      </button>
+
+      <ul class="flex items-center gap-4" aria-label="Profiles">
+        <li><a href="https://github.com/dishant-08" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="text-mute hover:text-accent transition-colors"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.9 10.9c.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0C19.3 4.7 20.3 5 20.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.6.8.5A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z"/></svg></a></li>
+        <li><a href="https://www.linkedin.com/in/dishant-sahu-b18240244/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="text-mute hover:text-accent transition-colors"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.4 20.4h-3.5v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.4V9h3.4v1.6h.1c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.2 2.4 4.2 5.4v6.3ZM5.3 7.4a2 2 0 1 1 0-4.1 2 2 0 0 1 0 4.1Zm1.8 13H3.6V9h3.5v11.4ZM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 1 .8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7c0-1-.8-1.7-1.8-1.7Z"/></svg></a></li>
+        <li><a href="https://twitter.com/sahu_dishant" target="_blank" rel="noopener noreferrer" aria-label="Twitter / X" class="text-mute hover:text-accent transition-colors"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 1.2h3.7l-8.1 9.3L24 22.8h-7.5l-5.9-7.7-6.7 7.7H.2l8.6-9.9L0 1.2h7.7l5.3 7 6-7Zm-1.3 19.4h2L7.6 3.3h-2.2l12.2 17.3Z"/></svg></a></li>
+        <li><a href="mailto:dishant.sahu07@gmail.com" aria-label="Email" class="text-mute hover:text-accent transition-colors"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a></li>
+      </ul>
+
+      <p class="meta">Sambalpur, IN — IST</p>
+    </div>
+  </aside>
+
+  <!-- ─── Content ────────────────────────────────────────────────────────── -->
+  <main id="main" class="lg:ml-[19rem]">
+    <div class="px-5 md:px-12 xl:px-20 max-w-[52rem]">
+
+      <!-- Hero -->
+      <section id="top" class="min-h-[88vh] flex flex-col justify-center py-24">
+        <h1 class="hero-rise d1 font-display font-[420] tracking-tight leading-[1.04] text-[clamp(2.2rem,5.2vw,4rem)]">
+          Software that moves <em class="text-accent not-italic font-[560]">real&nbsp;money</em>,
+          runs <em class="text-accent not-italic font-[560]">real&nbsp;interviews</em>,
+          and tracks <em class="text-accent not-italic font-[560]">50,000&nbsp;vehicles</em> — live.
+        </h1>
+        <p class="hero-rise d2 mt-8 max-w-prose2 text-lg leading-relaxed text-mute">
+          I'm a full-stack developer at <span class="text-ink font-medium">404Minds</span> working on realtime
+          fleet telematics, and the solo developer behind
+          <a href="#juma" class="link-draw text-ink font-medium">JŪMA</a> (healthcare payments) and
+          <a href="#wittybyte" class="link-draw text-ink font-medium">WittyByte</a> (AI interview prep).
+          TypeScript, Next.js, Go, PostgreSQL.
+        </p>
+        <div class="hero-rise d3 mt-10 flex flex-wrap items-center gap-8">
+          <a href="#work" class="font-mono text-sm uppercase tracking-widest text-accent link-draw">Selected work ↓</a>
+          <a href="mailto:dishant.sahu07@gmail.com" class="font-mono text-sm uppercase tracking-widest text-mute hover:text-ink link-draw">dishant.sahu07@gmail.com</a>
+        </div>
+      </section>
+
+      <!-- 01 Work -->
+      <section id="work" class="pb-24 scroll-mt-20">
+        <h2 class="section-label reveal"><span class="no">01</span>Selected Work</h2>
+
+        <article id="juma" class="work-row reveal mt-10">
+          <span class="row-no" aria-hidden="true">01</span>
+          <div>
+            <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+              <h3 class="font-display font-[520] text-3xl tracking-tight">JŪMA</h3>
+              <span class="meta">Solo Developer · Live — early access</span>
+            </div>
+            <p class="mt-4 max-w-prose2 leading-relaxed text-mute">
+              A health wallet that pays providers upfront and helps patients save for the care they
+              actually want. Stripe-backed payments, QR-code patient onboarding, generated PDF
+              statements, invite-only early access.
+            </p>
+            <p class="meta mt-5">Next.js · TypeScript · Prisma · PostgreSQL · Stripe · Better Auth · Supabase · Sentry · Resend</p>
+            <div class="mt-5 flex gap-6">
+              <a href="https://juma-theta.vercel.app" target="_blank" rel="noopener noreferrer" class="font-mono text-sm text-accent link-draw">Visit JŪMA ↗</a>
+              <span class="font-mono text-sm text-mute">Private repository</span>
+            </div>
+          </div>
+        </article>
+
+        <article id="wittybyte" class="work-row reveal">
+          <span class="row-no" aria-hidden="true">02</span>
+          <div>
+            <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+              <h3 class="font-display font-[520] text-3xl tracking-tight">WittyByte</h3>
+              <span class="meta">Solo Developer · Live — subscription SaaS</span>
+            </div>
+            <p class="mt-4 max-w-prose2 leading-relaxed text-mute">
+              AI-powered interview prep for ML engineers: voice interview simulations, a Monaco-based
+              coding workspace, a curated question bank from top tech companies, and readiness
+              scoring — sold as monthly subscriptions.
+            </p>
+            <p class="meta mt-5">Next.js 14 · TypeScript · Prisma · Vercel Postgres · OpenAI · Retell · Clerk · Stripe · PostHog</p>
+            <div class="mt-5 flex gap-6">
+              <a href="https://www.wittybyte.ai" target="_blank" rel="noopener noreferrer" class="font-mono text-sm text-accent link-draw">Visit wittybyte.ai ↗</a>
+              <span class="font-mono text-sm text-mute">Private repository</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="work-row reveal">
+          <span class="row-no" aria-hidden="true">03</span>
+          <div>
+            <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+              <h3 class="font-display font-[520] text-3xl tracking-tight">Realtime fleet telematics</h3>
+              <span class="meta">404Minds · Client work — under NDA</span>
+            </div>
+            <p class="mt-4 max-w-prose2 leading-relaxed text-mute">
+              Production platform tracking 50,000+ vehicles live: gRPC/Protobuf microservices on
+              ScyllaDB and PostgreSQL, Go ingestion consumers parsing GPS tracker protocols,
+              Google Maps clustering dashboards, and geofence alerting with ~60s latency.
+            </p>
+            <p class="meta mt-5">TypeScript · Go · React · gRPC / Protobuf · ScyllaDB · Redis · Docker · Ansible · Nginx</p>
+            <div class="mt-5 flex gap-6">
+              <a href="https://github.com/404minds/avl-receiver" target="_blank" rel="noopener noreferrer" class="font-mono text-sm text-accent link-draw">Open-source component ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <div class="reveal mt-16">
+          <h3 class="meta">Earlier work</h3>
+          <ul class="mt-4 divide-y divide-line border-y border-line">
+            <li class="flex flex-wrap items-baseline gap-x-3 py-3">
+              <span class="font-medium">AI Resume Generator</span>
+              <span class="text-sm text-mute grow">OpenAI-assisted resume writing with PDF export — React, OpenAI API</span>
+              <span class="flex gap-4 font-mono text-xs">
+                <a class="text-accent link-draw" target="_blank" rel="noopener noreferrer" href="https://ai-resume-xi.vercel.app/">Live ↗</a>
+                <a class="text-mute link-draw" target="_blank" rel="noopener noreferrer" href="https://github.com/dishant-08/aiResume">Code</a>
+              </span>
+            </li>
+            <li class="flex flex-wrap items-baseline gap-x-3 py-3">
+              <span class="font-medium">Crypto Dashboard</span>
+              <span class="text-sm text-mute grow">Live market data from CoinGecko, built to a Figma spec — React, Tailwind</span>
+              <span class="flex gap-4 font-mono text-xs">
+                <a class="text-accent link-draw" target="_blank" rel="noopener noreferrer" href="https://crypto-dashb.netlify.app/">Live ↗</a>
+                <a class="text-mute link-draw" target="_blank" rel="noopener noreferrer" href="https://github.com/dishant-08/KoinxAssignment">Code</a>
+              </span>
+            </li>
+            <li class="flex flex-wrap items-baseline gap-x-3 py-3">
+              <span class="font-medium">YouTube Clone</span>
+              <span class="text-sm text-mute grow">Debounced search, nested comments, live chat — React, Redux</span>
+              <span class="flex gap-4 font-mono text-xs">
+                <a class="text-accent link-draw" target="_blank" rel="noopener noreferrer" href="https://my-youtube-lime.vercel.app/">Live ↗</a>
+                <a class="text-mute link-draw" target="_blank" rel="noopener noreferrer" href="https://github.com/dishant-08/myYoutube">Code</a>
+              </span>
+            </li>
+            <li class="flex flex-wrap items-baseline gap-x-3 py-3">
+              <span class="font-medium">E-commerce Storefront</span>
+              <span class="text-sm text-mute grow">Responsive store with persistent cart and wishlist — React</span>
+              <span class="flex gap-4 font-mono text-xs">
+                <a class="text-accent link-draw" target="_blank" rel="noopener noreferrer" href="https://ecommwebsite08.netlify.app/">Live ↗</a>
+                <a class="text-mute link-draw" target="_blank" rel="noopener noreferrer" href="https://github.com/dishant-08/Ecommerce-Assigment">Code</a>
+              </span>
+            </li>
+            <li class="flex flex-wrap items-baseline gap-x-3 py-3">
+              <span class="font-medium">100x Microblogging</span>
+              <span class="text-sm text-mute grow">Full-stack micro-social platform — React, Node.js, PostgreSQL, Supabase</span>
+              <span class="flex gap-4 font-mono text-xs">
+                <a class="text-accent link-draw" target="_blank" rel="noopener noreferrer" href="https://react-week-1-dishant-08-hbrg.vercel.app/">Live ↗</a>
+                <a class="text-mute link-draw" target="_blank" rel="noopener noreferrer" href="https://github.com/dishant-08/100x-microblogging">Code</a>
+              </span>
+            </li>
+            <li class="flex flex-wrap items-baseline gap-x-3 py-3">
+              <span class="font-medium">Truecaller-style API</span>
+              <span class="text-sm text-mute grow">REST API with auth, spam reporting, number search — Node, Express, Sequelize</span>
+              <span class="flex gap-4 font-mono text-xs">
+                <a class="text-mute link-draw" target="_blank" rel="noopener noreferrer" href="https://github.com/dishant-08/asliCaller-api">Code</a>
+              </span>
+            </li>
+            <li class="flex flex-wrap items-baseline gap-x-3 py-3">
+              <span class="font-medium">i-meet Video Chat</span>
+              <span class="text-sm text-mute grow">WebRTC rooms with in-call chat — Next.js, Socket.io, PeerJS</span>
+              <span class="flex gap-4 font-mono text-xs">
+                <a class="text-mute link-draw" target="_blank" rel="noopener noreferrer" href="https://github.com/dishant-08/i-meet">Code</a>
+              </span>
+            </li>
+          </ul>
+          <a href="https://github.com/dishant-08?tab=repositories" target="_blank" rel="noopener noreferrer" class="mt-4 inline-block font-mono text-sm text-mute hover:text-ink link-draw">More on GitHub ↗</a>
+        </div>
+      </section>
+
+      <!-- 02 Experience -->
+      <section id="experience" class="pb-24 scroll-mt-20">
+        <h2 class="section-label reveal"><span class="no">02</span>Experience</h2>
+
+        <article class="reveal mt-10">
+          <div class="flex flex-wrap items-baseline justify-between gap-2">
+            <h3 class="font-display font-[520] text-2xl tracking-tight">404Minds Technologies</h3>
+            <span class="meta">May 2024 — Present</span>
+          </div>
+          <p class="meta mt-1">Software Developer · Remote</p>
+          <ul class="mt-4 space-y-2 max-w-prose2 leading-relaxed text-mute list-disc pl-5 marker:text-accent">
+            <li>Built gRPC/Protobuf microservices on ScyllaDB and PostgreSQL with horizontal partitioning, maintaining 100% uptime in production.</li>
+            <li>Developed a realtime fleet dashboard in React + TypeScript with Google Maps clustering, rendering 50,000+ vehicles live.</li>
+            <li>Automated geofence breach alerts on a 1-minute cron, holding notification latency to ~60 seconds; cut outage detection to 2 minutes with Uptime Kuma.</li>
+          </ul>
+        </article>
+
+        <article class="reveal mt-12">
+          <div class="flex flex-wrap items-baseline justify-between gap-2">
+            <h3 class="font-display font-[520] text-2xl tracking-tight">Independent products</h3>
+            <span class="meta">Aug 2023 — Present</span>
+          </div>
+          <p class="meta mt-1">Solo Developer</p>
+          <p class="mt-4 max-w-prose2 leading-relaxed text-mute">
+            End-to-end ownership of JŪMA and WittyByte — product, schema design, payments,
+            auth, observability, and deployment.
+          </p>
+        </article>
+      </section>
+
+      <!-- 03 Skills -->
+      <section id="skills" class="pb-24 scroll-mt-20">
+        <h2 class="section-label reveal"><span class="no">03</span>Skills</h2>
+        <div class="reveal mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-8">
+          <div>
+            <h3 class="meta mb-3">Languages</h3>
+            <p class="leading-7 text-mute">TypeScript, JavaScript, Go, SQL, Java, HTML/CSS</p>
+          </div>
+          <div>
+            <h3 class="meta mb-3">Backend</h3>
+            <p class="leading-7 text-mute">Node.js, Express, gRPC/Protobuf, WebSockets (Socket.io), REST APIs</p>
+          </div>
+          <div>
+            <h3 class="meta mb-3">Frontend</h3>
+            <p class="leading-7 text-mute">React, Next.js (App Router), Redux, Tailwind CSS, shadcn/ui (Radix), Vite</p>
+          </div>
+          <div>
+            <h3 class="meta mb-3">Databases</h3>
+            <p class="leading-7 text-mute">PostgreSQL, Prisma, ScyllaDB, Redis, MySQL, Supabase</p>
+          </div>
+          <div>
+            <h3 class="meta mb-3">Cloud &amp; Infra</h3>
+            <p class="leading-7 text-mute">AWS (Amplify, RDS, S3), Vercel, Docker, Ansible, Nginx</p>
+          </div>
+          <div>
+            <h3 class="meta mb-3">Services &amp; Tools</h3>
+            <p class="leading-7 text-mute">Stripe, Clerk, Better Auth, Sentry, PostHog, OpenAI API, Git, Postman, Figma</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 04 Education -->
+      <section id="education" class="pb-24 scroll-mt-20">
+        <h2 class="section-label reveal"><span class="no">04</span>Education</h2>
+
+        <div class="reveal mt-10 space-y-10">
+          <article>
+            <div class="flex flex-wrap items-baseline justify-between gap-2">
+              <h3 class="font-display font-[520] text-2xl tracking-tight">Veer Surendra Sai University of Technology</h3>
+              <span class="meta">2019 — 2023</span>
+            </div>
+            <p class="mt-2 text-mute">B.Tech — CGPA 8.37 · Sambalpur, India</p>
+            <p class="mt-1 text-sm text-mute">Published research: hardware implementation of image encryption/decryption with Xilinx System Generator, validated on FPGA.</p>
+          </article>
+
+          <article>
+            <div class="flex flex-wrap items-baseline justify-between gap-2">
+              <h3 class="font-display font-[520] text-2xl tracking-tight">Vikash Residential School, Bargarh</h3>
+              <span class="meta">2017 — 2019</span>
+            </div>
+            <p class="mt-2 text-mute">CBSE Intermediate — 90.4% · Achiever's Award for AISSCE-XII &amp; JEE 2019 (top percentile)</p>
+          </article>
+
+          <p class="meta">270+ coding problems solved across platforms</p>
+        </div>
+      </section>
+
+      <!-- 05 Contact -->
+      <section id="contact" class="pb-28 scroll-mt-20">
+        <h2 class="section-label reveal"><span class="no">05</span>Contact</h2>
+        <div class="reveal mt-12">
+          <p class="font-display font-[420] tracking-tight leading-tight text-[clamp(1.8rem,3.6vw,2.8rem)] max-w-[36rem]">
+            Have something worth building?
+          </p>
+          <a href="mailto:dishant.sahu07@gmail.com" class="mt-6 inline-block font-mono text-lg md:text-xl text-accent link-draw break-all">
+            dishant.sahu07@gmail.com
+          </a>
+          <ul class="mt-10 flex flex-wrap gap-x-8 gap-y-3 font-mono text-sm uppercase tracking-widest" aria-label="Profiles">
+            <li><a class="text-mute hover:text-ink link-draw" target="_blank" rel="noopener noreferrer" href="https://github.com/dishant-08">GitHub ↗</a></li>
+            <li><a class="text-mute hover:text-ink link-draw" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/dishant-sahu-b18240244/">LinkedIn ↗</a></li>
+            <li><a class="text-mute hover:text-ink link-draw" target="_blank" rel="noopener noreferrer" href="https://twitter.com/sahu_dishant">Twitter ↗</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <footer class="border-t border-line py-8 flex flex-wrap items-baseline justify-between gap-3">
+        <p class="meta">© <span id="year"></span> Dishant Sahu</p>
+        <p class="meta">Hand-built — set in Fraunces &amp; Spline Sans Mono</p>
+      </footer>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

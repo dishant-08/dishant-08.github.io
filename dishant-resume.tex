@@ -1,0 +1,389 @@
+%-------------------------
+% Resume in Latex
+% Author : Abey George
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\usepackage{graphicx}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+
+\RequirePackage{tikz}
+\RequirePackage{xcolor}
+\RequirePackage{fontawesome}
+\usepackage{tikz}
+\usetikzlibrary{svg.path}
+
+
+\definecolor{cvblue}{HTML}{0E5484}
+\definecolor{black}{HTML}{130810}
+\definecolor{darkcolor}{HTML}{0F4539}
+\definecolor{cvgreen}{HTML}{3BD80D}
+\definecolor{taggreen}{HTML}{00E278}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\colorlet{name}{black}
+\colorlet{tagline}{darkcolor}
+\colorlet{heading}{darkcolor}
+\colorlet{headingrule}{cvblue}
+\colorlet{accent}{darkcolor}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+% \pagestyle{fancy}
+% \fancyhf{}  % clear all header and footer fields
+% \fancyfoot{}
+% \renewcommand{\headrulewidth}{0pt}
+% \renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.6in}
+\addtolength{\textheight}{1.5in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-4pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\classesList}[4]{
+    \item\small{
+        {#1 #2 #3 #4 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{\large#1} & \textbf{\small #2} \\
+      \textit{\large#3} & \textit{\small #4} \\
+
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textbf{\small #2}\\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+
+\newcommand\sbullet[1][.5]{\mathbin{\vcenter{\hbox{\scalebox{#1}{$\bullet$}}}}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+
+
+\begin{center}
+    {\Huge \scshape Dishant Sahu} \\ \vspace{1pt}
+   Sambalpur, Odisha \\ \vspace{1pt}
+   \small \href{tel:+91-7978747037}{\raisebox{-0.1\height}\faPhone\ \underline{+91-7978747037}} \hspace{4pt}
+\href{mailto:dishant.sahu07@gmail.com}{\raisebox{-0.2\height}\faEnvelope\ \underline{dishant.sahu07@gmail.com}} \hspace{4pt} ~
+    \href{https://www.linkedin.com/in/dishant-sahu-b18240244/}{\raisebox{-0.2\height}\faLinkedinSquare\ \underline{Linkedin}}  ~
+    \href{https://github.com/dishant-08}{\raisebox{-0.2\height}\faGithub\ \underline{Github}} ~
+    % \href{https://www.hackerrank.com/yourid}{\raisebox{-0.2\height}\faHackerrank\ \underline{yourid}} ~
+    % \href{https://dishant-08.github.io/html-tcss/}{\raisebox{-0.2\height}\faPoll\ \underline{Portfolio}}
+    \href{https://dishant-08.github.io/html-tcss/}{\raisebox{-0.2\height}\faPoll\ \underline{Portfolio}}
+    \vspace{-8pt}
+\end{center}
+
+%------Bio-------
+% \section{CAREER OBJECTIVE}
+% %     %\resumeSubHeadingListStart
+%       Enthusiastic student with a strong drive to learn, focused on acquiring new skills and making valuable contributions. Demonstrates reliability through consistent performance and excels in diverse technical domains by embracing challenges and delivering results.
+%     %\resumeSubHeadingListEnd
+%   \vspace{-10pt}
+%-----------SUMMARY-----------
+\section{SUMMARY}
+{\normalsize Full-stack developer specializing in \textbf{TypeScript, React/Next.js, Golang, and PostgreSQL}. Building realtime fleet-telematics systems serving \textbf{50,000+ vehicles} at 404Minds, and shipping independent SaaS products since \textbf{Aug 2023} --- \textbf{J\={U}MA} (healthcare payments) and \textbf{WittyByte} (AI-powered interview preparation).}
+\vspace{-6pt}
+%-----------EDUCATION-----------
+\section{EDUCATION}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+          {Veer Surendra Sai University of Technology}{2019 -- 2023}
+      {Bachelor of Technology - \textbf{CGPA} : \textbf{8.37}}{Sambalpur, India}
+  \resumeSubHeadingListEnd
+    \vspace{-15pt}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Vikash Residential School, Bargarh}{2017 -- 2019}
+      {CBSE - Intermediate - \textbf{Percentage} : \textbf{90.4\%} }{Sambalpur, India}
+  \resumeSubHeadingListEnd
+
+    \vspace{-14pt}
+
+
+
+%-----------PROJECTS-----------
+
+\section{PROJECTS}
+    \vspace{-5pt}
+    \resumeSubHeadingListStart
+
+      \resumeProjectHeading
+  {\href{https://juma-theta.vercel.app}{\textbf{\large{\underline{J\={U}MA Health Wallet}}}
+  \raisebox{-0.1\height}{\faExternalLink}} ~$|$ \large{Next.js, TypeScript, Prisma, PostgreSQL, Stripe, Supabase}}{Solo Developer}
+\resumeItemListStart
+  \resumeItem{\normalsize{Built a health-wallet platform where providers collect payment upfront and patients save for planned care; gated \textbf{invite-only} early access with \textbf{QR-code} onboarding flows.}}
+  \resumeItem{\normalsize{Implemented \textbf{Stripe} payment flows, \textbf{Better Auth} sessions, and a normalized \textbf{Prisma + PostgreSQL} schema with typed \textbf{Zod} validation end to end.}}
+  \resumeItem{\normalsize{Shipped branded \textbf{PDF statement generation} (pdf-lib) and transactional email via \textbf{Resend}; monitored errors and performance with \textbf{Sentry}.}}
+\resumeItemListEnd
+
+\vspace{-14pt}
+
+      \resumeProjectHeading
+  {\href{https://app.wittybyte.ai}{\textbf{\large{\underline{WittyByte AI/ML Interview Platform}}}
+  \raisebox{-0.1\height}{\faExternalLink}} ~$|$ \large{Next.js, Prisma, PostgreSQL, Shadcn, Clerk }}{Solo Developer}
+\resumeItemListStart
+  % \resumeItem{\normalsize{Launched MVP; onboarded \textbf{457 users} and converted \textbf{3 paying subscribers} using \textbf{Stripe} subscriptions, customer portal, and verified \textbf{webhook} handlers.}}
+    \resumeItem{\normalsize{Engineered an SSR-first platform on \textbf{Next.js 14 App Router} and Monetized via \textbf{Stripe} subscriptions; added \textbf{sitemap} for crawlability and SEO.}}
+
+
+
+\resumeItem{\normalsize{Translated Figma designs into a scalable \textbf{shadcn/ui} system (Radix, Tailwind); themeable components and variants.}}
+
+\resumeItem{\normalsize{Designed a normalized \textbf{Prisma + PostgreSQL} schema; enforced \textbf{foreign keys} (cascade) and indexing for integrity and performance at scale.}}
+
+
+  \resumeItem{\normalsize{Integrated \textbf{OpenAI} (question generation + feedback) and \textbf{Retell} (voice interviews); instrumented activation→subscription funnel with \textbf{PostHog} and \textbf{Google Analytics}.}}
+  \resumeItem{\normalsize{Hardened ops with \textbf{Clerk} SSO (Google/GitHub), idempotent billing flows, environment-scoped \textbf{Vercel} deploys, and structured error/performance logging.}}
+\resumeItemListEnd
+
+
+\vspace{-14pt}
+
+
+
+    \resumeProjectHeading
+  {\href{https://react-week-1-dishant-08-hbrg.vercel.app/}{\textbf{\large{\underline{100x Microblogging Platform}}}
+  \raisebox{-0.1\height}{\faExternalLink} ~$|$~\href{https://github.com/100x-Engineers/react-week-1-dishant-08.git}{\raisebox{0.0\height}\faGithub }} $|$ \large{ReactJS, TailwindCSS, Node.js, PostgreSQL, Supabase}}{}
+\resumeItemListStart
+\resumeItem{\normalsize{Architected and developed a full-stack microblogging platform, seamlessly integrating \textbf{ReactJS} for the front end.}}
+\resumeItem{\normalsize{Optimized user experience through responsive design, achieving a \textbf{15\% improvement} in overall platform responsiveness.}}
+\resumeItem{\normalsize{Enhanced code maintainability by \textbf{30\%} through strategic use of \textbf{ReactJS} for modular development.}}
+\resumeItem{\normalsize{Deployed a robust \textbf{Node.js} API, ensuring secure and scalable data management by integrating with \textbf{PostgreSQL} and \textbf{Supabase}.}}
+
+
+\resumeItemListEnd
+  \vspace{-14pt}
+    \resumeSubHeadingListEnd
+
+%       \resumeProjectHeading
+%   {\href{https://my-youtube-lime.vercel.app}{\textbf{\large{\underline{My YouTube App Clone }}}
+%   \raisebox{-0.1\height}{\faExternalLink} ~$|$~\href{https://github.com/dishant-08/myYoutube.git}{\raisebox{-0.1\height}\faGithub }} $|$ \large{React, Redux, Tailwind CSS, YouTube Data API v3}}{}
+%  \resumeItemListStart
+%   \resumeItem{\normalsize{Developed YouTube clone with React, Redux, and Tailwind CSS, mirroring UI/UX of official site.}}
+%     \resumeItem{\normalsize{Implemented \textbf{denouncing} techniques, optimizing API requests and resulting in a \textbf{30\% reduction} in redundant API calls, enhancing overall app performance.}}
+%   \resumeItem{\normalsize{Integrated live chat feature for real-time interaction, boosting user engagement and providing a dynamic social experience within the app.}}
+%   % \resumeItem{\normalsize{Optimized styling with Tailwind CSS, achieving \textbf{20\% reduction} in size, faster load times.}}
+%   \resumeItem{\normalsize{Utilized React and Redux for \textbf{seamless, responsive UI} across devices.}}
+% \resumeItemListEnd
+
+
+
+% \vspace{-14pt}
+%       \resumeProjectHeading
+%   {\href{https://ai-resume-xi.vercel.app/}{\textbf{\large{\underline{AI Resume Generator }}}
+%   \raisebox{-0.1\height}{\faExternalLink} ~$|$~\href{https://github.com/dishant-08/aiResume.git}{\raisebox{0.0\height}\faGithub }} $|$ \large{React, Tailwind CSS, OpenAI API, Formik, Yup}}{Ongoing}
+% \resumeItemListStart
+%   \resumeItem{\normalsize{Developed an AI-powered Resume Generator using React, Tailwind CSS, and the OpenAI API, ensuring cutting-edge technology integration.}}
+%   \resumeItem{\normalsize{Implemented a \textbf{throttling button} for user-controlled API optimization, facilitating effective server load management.}}
+%   \resumeItem{\normalsize{Integrated \textbf{Formik and Yup} for robust form handling, reducing form submission errors by \textbf{15\%}.}}
+%   % \resumeItem{\normalsize{Achieved \textbf{numerical optimization} for API usage, improving response times by \textbf{25\%} and minimizing latency.}}
+%   % \resumeItem{\normalsize{Ensured a \textbf{responsive design}, providing an optimal user experience on both web and desktop platforms.}}
+%   \resumeItem{\normalsize{Enhanced user experience by implementing a download feature, allowing users to download content as a PDF.}}
+% \resumeItemListEnd
+% \vspace{-14pt}
+
+
+\vspace{8pt}
+
+%
+
+%-----------PROGRAMMING SKILLS-----------
+\section{TECHNICAL SKILLS}
+\vspace{-5pt}
+\begin{itemize}[leftmargin=0.15in, label={}]
+    \item{\textbf{\normalsize{Languages:}}{\normalsize{ TypeScript, JavaScript, Golang, SQL, Java, HTML / CSS}}\vspace{-2pt}}
+    \item{\textbf{\normalsize{Backend:}}{\normalsize{ Node.js, Express, gRPC / Protobuf, WebSockets (Socket.io), REST APIs}}\vspace{-2pt}}
+    \item{\textbf{\normalsize{Frontend:}}{\normalsize{ ReactJS, Next.js (App Router), Redux, TailwindCSS, shadcn/ui (Radix), Vite}}\vspace{-2pt}}
+    \item{\textbf{\normalsize{Databases:}}{\normalsize{ PostgreSQL, Prisma, ScyllaDB, Redis, MySQL, Supabase}}\vspace{-2pt}}
+    \item{\textbf{\normalsize{Cloud \& Infra:}}{\normalsize{ AWS (Amplify, RDS, S3), Vercel, Docker, Ansible, Nginx}}\vspace{-2pt}}
+    \item{\textbf{\normalsize{Services \& Tools:}}{\normalsize{ Stripe, Clerk, Better Auth, Sentry, PostHog, OpenAI API, Git, Postman, Figma}}\vspace{-2pt}
+\end{itemize}
+\vspace{-14pt}
+ % \vspace{8pt}
+%-----------EXPERIENCE-----------
+\section{WORK EXPERIENCE}
+\vspace{-5pt}
+\resumeSubHeadingListStart
+\resumeSubheading
+{\textit{\textbf{404Minds Technologies}}}
+{May 2024 -- Present}
+{Software Developer }{Remote}
+\resumeItemListStart
+\resumeItem{\normalsize{Built \textbf{gRPC/Protobuf} microservices on \textbf{ScyllaDB} and \textbf{PostgreSQL} with horizontal partitioning, maintaining \textbf{100\% uptime} across production.}}
+\resumeItem{\normalsize{Developed a real-time fleet dashboard using \textbf{React}, \textbf{TypeScript}, and \textbf{Google Maps} clustering, rendering \textbf{50,000+ vehicles} live.}}
+\resumeItem{\normalsize{Automated geofence breach alerts via a \textbf{1-min cron}, achieving \textbf{60s} notification latency.}}
+\resumeItem{\normalsize{Deployed \textbf{Uptime Kuma}, cutting detection time to \textbf{2 min} with \textbf{0 missed outages}.}}
+\resumeItemListEnd
+\vspace{2pt}
+
+% \section{TRAINING \& INTERNSHIP}
+% \vspace{-5pt}
+% \resumeSubHeadingStart
+% \resumeSubheading
+% {\textit{\textbf{AI Accelerated Full-Stack Engineering Cohort}}}
+% {\href{#}{\raisebox{-0.1\height}{ Dec 2023}}}
+% {Full-stack Developer Trainee}{Remote}
+% \resumeItemListStart
+% \resumeItem{\normalsize{Acquired programming skills in ReactJS, TailwindCSS, Node.js, PostgreSQL, Supabase, and OpenAI API.}}\resumeItem{\normalsize{Specialized in domain modeling for efficient project architecture, applying principles through mental models and peer programming, with a focus on modular programming.}}
+
+% \resumeItemListEnd
+%  \vspace{2pt}
+
+% \resumeSubheading
+% {\textit{\textbf{Signal and Telecommunication Department, East coast railway}}}
+% {\href{https://drive.google.com/file/d/1pbLm725DUrEswOzuz9k_NHZVEFcqAxpE/view?usp=sharing}{\raisebox{-0.1\height}{July 2022}}}
+% { Trainee}{Sambalpur, India}
+% \resumeItemListStart
+% \resumeItem{\normalsize{Learned operation and troubleshooting of EI boards and traffic signals.}}
+% \resumeItem{\normalsize{Acquired proficiency in using various signal department instruments.}}
+% \resumeItemListEnd
+\resumeSubHeadingListEnd
+ \vspace{-18pt}
+% \section{TRAINING \& INTERNSHIP}
+%   \resumeSubHeadingListStart
+% \vspace{-2pt} \\
+%   \resumeSubheading
+%   {\textit{\textbf{AI Accelerated Full-Stack Engineering Cohort}}}
+%   {\href{#}{\raisebox{-0.1\height}{Currently Pursuing}}}
+%   {Full-stack Developer Trainee}{Remote}
+% \vspace{-1pt} \\
+% \resumeItemListStart
+%   \resumeItem{\normalsize{Acquiring advanced skills in AI-accelerated programming.}}
+%   \resumeItem{\normalsize{Enhancing productivity through immersive full-stack engineering training.}}
+% \resumeItemListEnd
+% \vspace{-5pt}
+% \resumeSubHeadingListEnd
+%         \vspace{1pt}
+
+% \resumeSubheading
+%     {\textit{\textbf{Signal and Telecommunication Department, East coast railway}}
+%   \href{https://drive.google.com/file/d/1pbLm725DUrEswOzuz9k_NHZVEFcqAxpE/view?usp=sharing}{\raisebox{-0.1\height} }}{ July,22}
+%       { Trainee}{Sambalpur, India}
+%       \resumeItemListStart
+%         \resumeItem{\normalsize{Learned operation and troubleshooting of EI boards and traffic signals.}}
+%         \resumeItem{\normalsize{Acquired proficiency in using various signal department instruments.}}
+%         \resumeItemListEnd
+
+%   \resumeSubHeadingListEnd
+% \vspace{-10pt}
+
+
+
+%-----------INVOLVEMENT---------------
+\vspace{10pt}
+\section{\textbf{ACCOMPLISHMENTS } }
+\vspace{-5pt}
+            \resumeItemListStart
+                \resumeItem{\normalsize{Successfully solved more than \textbf{270+ coding problems} on different platforms demonstrating strong problem-solving and analytical skills.}}
+ \vspace{-2pt}
+               \resumeItem{\normalsize{Recipient of Vikash Residential School Achiever's Award for exceptional performance in AISSCE-XII and JEE 2019, showcasing outstanding academic achievements. Attained a top percentile ranking in the Joint Entrance Examination.}}
+
+ \vspace{-2pt}
+ %                \resumeItem{\normalsize{Completed \textbf{National Cadet Corps} 'B' \& 'C' Certification by demonstrating Discipline and Leadership}}
+ % \vspace{-7pt}
+ %                \resumeItem{\normalsize{Participated in Accenture \textbf{Innovation Challenge} 2023. }}
+ % \vspace{-7pt}
+            \resumeItemListEnd
+ \vspace{-10pt}
+ %-----------CERTIFICATIONS---------------
+% \section{CERTIFICATIONS}
+% \vspace{-1pt}
+% \begin{multicols}{2}
+
+
+% $\sbullet[.75] \hspace{0.1cm}$ {\href{https://drive.google.com/file/d/1pbLm725DUrEswOzuz9k_NHZVEFcqAxpE/view?usp=sharing}{\textbf{CORE JAVA} -Certified by CTTC, Bhubaneswar}}
+
+
+% $\sbullet[.75] \hspace{0.1cm}$ {\href{}{\textbf{Python Crashcourse} -Certified by Coursera}}
+
+% \end{multicols}
+
+% \vspace{4pt}
+\end{document}

@@ -1,12 +1,12 @@
 {
   "name": "html-tcss",
-  "description": "Deployed on: https://dishant-08.github.io/html-tcss/src/index.html",
+  "description": "Portfolio — deployed on: https://dishant-08.github.io/html-tcss/",
   "version": "1.0.0",
   "keywords": [],
   "author": "",
   "license": "ISC",
   "scripts": {
-    "build": "tailwindcss -i ./src/input.css -o ./dist/output.css",
+    "build": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
     "watch": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
   },
   "devDependencies": {

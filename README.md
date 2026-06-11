@@ -1,6 +1,6 @@
-Deployed on :https://dishant-08.github.io/html-tcss/src/index.html
+Deployed on: https://dishant-08.github.io/html-tcss/
 
-# Dishant Sahu - Resume
+# Dishant Sahu - Portfolio
 
 Welcome to my GitHub repository! This repository contains the HTML and CSS code for my digital resume. Feel free to explore the code and learn more about my education, skills, experience, projects, publications, and more.
 

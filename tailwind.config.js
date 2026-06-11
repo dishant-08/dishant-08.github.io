@@ -1,14 +1,25 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,js}"],
+  content: ["./index.html", "./src/**/*.{html,js}", "./js/**/*.js"],
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
-        "bgclr-100x": "#ef5a3c",
-        "bgclr-100x-nav": "#d14f36",
+        paper: "rgb(var(--c-paper) / <alpha-value>)",
+        paper2: "rgb(var(--c-paper2) / <alpha-value>)",
+        ink: "rgb(var(--c-ink) / <alpha-value>)",
+        mute: "rgb(var(--c-mute) / <alpha-value>)",
+        line: "rgb(var(--c-line) / <alpha-value>)",
+        accent: "rgb(var(--c-accent) / <alpha-value>)",
+        accent2: "rgb(var(--c-accent2) / <alpha-value>)",
       },
       fontFamily: {
-        dm: ["DM Sans"],
+        display: ["Fraunces", "Georgia", "serif"],
+        sans: ["Instrument Sans", "system-ui", "sans-serif"],
+        mono: ["Spline Sans Mono", "ui-monospace", "monospace"],
+      },
+      maxWidth: {
+        prose2: "44rem",
       },
     },
   },
