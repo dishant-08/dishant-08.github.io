@@ -6,20 +6,21 @@ module.exports = {
     extend: {
       colors: {
         paper: "rgb(var(--c-paper) / <alpha-value>)",
-        paper2: "rgb(var(--c-paper2) / <alpha-value>)",
+        surface: "rgb(var(--c-surface) / <alpha-value>)",
         ink: "rgb(var(--c-ink) / <alpha-value>)",
         mute: "rgb(var(--c-mute) / <alpha-value>)",
         line: "rgb(var(--c-line) / <alpha-value>)",
         accent: "rgb(var(--c-accent) / <alpha-value>)",
-        accent2: "rgb(var(--c-accent2) / <alpha-value>)",
+        "accent-deep": "rgb(var(--c-accent-deep) / <alpha-value>)",
       },
       fontFamily: {
-        display: ["Fraunces", "Georgia", "serif"],
-        sans: ["Instrument Sans", "system-ui", "sans-serif"],
-        mono: ["Spline Sans Mono", "ui-monospace", "monospace"],
+        display: ["Newsreader", "Georgia", "serif"],
+        sans: ["Hanken Grotesk", "system-ui", "sans-serif"],
+        mono: ["Fragment Mono", "ui-monospace", "monospace"],
       },
       maxWidth: {
         prose2: "44rem",
+        shell: "64rem",
       },
     },
   },

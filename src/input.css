@@ -2,27 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ─── Design tokens ──────────────────────────────────────────────────────────
-   Editorial palette: warm paper + ink in light mode, charcoal + cream in dark.
-   Values are space-separated RGB so Tailwind can apply alpha modifiers. */
+/* ─── Design tokens — "The Ledger" ────────────────────────────────────────────
+   Bone paper + near-black ink + one deep-green accent in light mode;
+   warm near-black + cream + sage in dark. Space-separated RGB so Tailwind
+   can apply alpha modifiers. All text pairs verified ≥ 6.3:1 (2026-07-07). */
 @layer base {
   :root {
-    --c-paper: 247 243 236;   /* warm paper      #F7F3EC */
-    --c-paper2: 239 233 222;  /* raised surface  #EFE9DE */
-    --c-ink: 32 26 20;        /* ink             #201A14 */
-    --c-mute: 102 91 79;      /* muted ink       #665B4F */
-    --c-line: 216 208 193;    /* hairline        #D8D0C1 */
-    --c-accent: 169 60 22;    /* terracotta      #A93C16 */
-    --c-accent2: 130 41 11;   /* terracotta deep #82290B */
+    --c-paper: 250 247 241;       /* bone            #FAF7F1 */
+    --c-surface: 242 237 227;     /* raised surface  #F2EDE3 */
+    --c-ink: 26 23 19;            /* ink             #1A1713 */
+    --c-mute: 93 85 73;           /* muted ink       #5D5549 */
+    --c-line: 219 211 197;        /* hairline        #DBD3C5 */
+    --c-accent: 23 96 74;         /* forest          #17604A */
+    --c-accent-deep: 14 74 56;    /* forest deep     #0E4A38 */
+
+    /* Contribution-heatmap ramp: single hue, light→dark, monotonic L* */
+    --hm-0: 236 229 216;          /* #ECE5D8 */
+    --hm-1: 197 220 206;          /* #C5DCCE */
+    --hm-2: 147 195 170;          /* #93C3AA */
+    --hm-3: 79 153 123;           /* #4F997B */
+    --hm-4: 23 96 74;             /* #17604A */
   }
   .dark {
-    --c-paper: 22 19 15;      /* warm near-black #16130F */
-    --c-paper2: 31 27 21;     /* raised surface  #1F1B15 */
-    --c-ink: 237 230 216;     /* cream           #EDE6D8 */
-    --c-mute: 168 157 140;    /* muted cream     #A89D8C */
-    --c-line: 53 47 38;       /* hairline        #352F26 */
-    --c-accent: 232 112 61;   /* terracotta lit  #E8703D */
-    --c-accent2: 240 144 99;  /* terracotta hover#F09063 */
+    --c-paper: 18 16 14;          /* warm near-black #12100E */
+    --c-surface: 27 24 21;        /* raised surface  #1B1815 */
+    --c-ink: 236 231 221;         /* cream           #ECE7DD */
+    --c-mute: 166 157 143;        /* muted cream     #A69D8F */
+    --c-line: 50 45 38;           /* hairline        #322D26 */
+    --c-accent: 140 201 169;      /* sage            #8CC9A9 */
+    --c-accent-deep: 168 219 191; /* sage lit        #A8DBBF */
+
+    --hm-0: 34 30 26;             /* #221E1A */
+    --hm-1: 41 71 58;             /* #29473A */
+    --hm-2: 64 112 90;            /* #40705A */
+    --hm-3: 99 165 131;           /* #63A583 */
+    --hm-4: 140 201 169;          /* #8CC9A9 */
   }
 
   html {
@@ -40,6 +54,7 @@
 
   body {
     @apply bg-paper text-ink font-sans antialiased;
+    font-size: 1.0625rem;
   }
 
   ::selection {
@@ -53,23 +68,12 @@
 
 /* ─── Components ───────────────────────────────────────────────────────────── */
 @layer components {
-  /* Numbered nav link in the rail */
-  .rail-link {
-    @apply flex items-baseline gap-3 py-1.5 font-mono text-sm uppercase tracking-widest
-           text-mute hover:text-ink transition-colors duration-200;
-  }
-  .rail-link .no {
-    @apply text-xs text-line transition-colors duration-200;
-  }
-  .rail-link:hover .no,
-  .rail-link[aria-current="true"] .no {
-    @apply text-accent;
-  }
-  .rail-link[aria-current="true"] {
-    @apply text-ink;
+  /* Mono metadata line (stack lists, dates, roles) */
+  .meta {
+    @apply font-mono text-xs uppercase tracking-widest text-mute;
   }
 
-  /* Underline that draws itself on hover */
+  /* Underline that draws itself on hover; nav links hold it at 100% when current */
   .link-draw {
     background-image: linear-gradient(currentColor, currentColor);
     background-size: 0% 1px;
@@ -82,45 +86,100 @@
     background-size: 100% 1px;
   }
 
-  /* Big editorial section label: "01 — Work" */
-  .section-label {
-    @apply flex items-baseline gap-4 font-mono text-xs uppercase tracking-[0.25em] text-mute
-           border-t border-line pt-5;
+  /* Top-nav chapter link */
+  .nav-link {
+    @apply link-draw font-mono text-[0.7rem] uppercase tracking-[0.18em] text-mute
+           hover:text-ink transition-colors duration-200 py-1;
   }
-  .section-label .no {
+  .nav-link[aria-current="true"] {
     @apply text-accent;
+    background-size: 100% 1px;
   }
 
-  /* A featured project row */
-  .work-row {
-    @apply relative grid gap-3 border-t border-line py-10
+  /* Chapter heading: hairline rule + mono label, then a display title */
+  .chapter-label {
+    @apply flex items-baseline gap-4 font-mono text-xs uppercase tracking-[0.25em] text-mute
+           border-t border-line pt-6;
+  }
+  .chapter-label .no {
+    @apply text-accent;
+  }
+  .chapter-title {
+    @apply mt-6 font-display font-[480] tracking-tight text-[1.9rem] leading-snug;
+  }
+
+  /* Verified stat: display numeral + mono label */
+  .stat-num {
+    @apply block font-display font-[460] tracking-tight text-accent
+           text-[clamp(2.3rem,4.6vw,3.2rem)] leading-none;
+    font-variant-numeric: lining-nums;
+  }
+
+  /* Journey timeline: hairline spine with accent dots */
+  .timeline {
+    @apply relative ml-1 border-l border-line;
+  }
+  .beat {
+    @apply relative pl-8 pb-12 last:pb-2;
+  }
+  .beat::before {
+    content: "";
+    @apply absolute -left-[5px] top-2 h-[9px] w-[9px] rounded-full bg-paper
+           border-2 border-accent;
+  }
+
+  /* Featured case-study row */
+  .case-row {
+    @apply relative grid gap-3 border-t border-line py-12
            md:grid-cols-[4rem_1fr] md:gap-6
            transition-colors duration-300;
   }
-  .work-row:hover {
-    @apply bg-paper2/60;
+  .case-row:hover {
+    @apply bg-surface/60;
   }
-  .work-row .row-no {
+  .case-row .row-no {
     @apply font-mono text-sm text-mute pt-2 transition-colors duration-300;
   }
-  .work-row:hover .row-no {
+  .case-row:hover .row-no {
     @apply text-accent;
   }
 
-  /* Mono metadata line (stack lists, dates, roles) */
-  .meta {
-    @apply font-mono text-xs uppercase tracking-widest text-mute;
+  /* Contribution heatmap cells (inline SVG, theme-aware) */
+  .hm-0 { fill: rgb(var(--hm-0)); }
+  .hm-1 { fill: rgb(var(--hm-1)); }
+  .hm-2 { fill: rgb(var(--hm-2)); }
+  .hm-3 { fill: rgb(var(--hm-3)); }
+  .hm-4 { fill: rgb(var(--hm-4)); }
+  .hm-label {
+    @apply fill-mute;
+    font-family: "Fragment Mono", ui-monospace, monospace;
+    font-size: 9px;
+  }
+  .hm-key {
+    @apply inline-block h-[10px] w-[10px] rounded-[2px];
   }
 
-  /* Scroll reveal */
-  .reveal {
+  /* Scroll reveal. Hidden state only applies when JS is running (html.js set
+     in the head script) — no-JS visitors get everything visible. */
+  .js .reveal {
     opacity: 0;
     transform: translateY(14px);
     transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
   }
-  .reveal.revealed {
+  .js .reveal.revealed {
     opacity: 1;
     transform: none;
+  }
+
+  /* Heatmap wipe-in. Triggered by the parent .reveal gaining .revealed —
+     a clipped element has zero intersection area, so IntersectionObserver
+     can never see the .wipe itself. */
+  .js .wipe {
+    clip-path: inset(0 100% 0 0);
+    transition: clip-path 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .js .revealed .wipe {
+    clip-path: inset(0 0 0 0);
   }
 
   /* Hero load choreography */
@@ -149,11 +208,13 @@
     scroll-behavior: auto;
   }
   .hero-rise,
-  .reveal {
+  .js .reveal,
+  .js .wipe {
     animation: none;
     transition: none;
     opacity: 1;
     transform: none;
+    clip-path: none;
   }
   *,
   ::before,

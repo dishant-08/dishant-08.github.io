@@ -12,16 +12,17 @@
     <meta name="author" content="Dishant Sahu" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://dishant-08.github.io/" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 
     <meta
       name="theme-color"
       media="(prefers-color-scheme: light)"
-      content="#F7F3EC"
+      content="#FAF7F1"
     />
     <meta
       name="theme-color"
       media="(prefers-color-scheme: dark)"
-      content="#16130F"
+      content="#12100E"
     />
 
     <!-- Open Graph / Twitter -->
@@ -30,18 +31,23 @@
     <meta property="og:title" content="Dishant Sahu — Full-Stack Developer" />
     <meta
       property="og:description"
-      content="Production SaaS: healthcare payments, AI interview prep, and realtime fleet telematics. TypeScript · Next.js · Go · PostgreSQL."
+      content="Software that moves real money, runs real interviews, and tracks 50,000+ vehicles — live. TypeScript · Next.js · Go · PostgreSQL."
     />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content="https://dishant-08.github.io/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Dishant Sahu — Full-Stack Developer" />
     <meta
       name="twitter:description"
       content="Production SaaS: healthcare payments, AI interview prep, and realtime fleet telematics."
     />
+    <meta name="twitter:image" content="https://dishant-08.github.io/og.png" />
 
     <!-- Set theme before first paint to avoid flash -->
     <script>
       (function () {
+        document.documentElement.classList.add("js");
         try {
           var stored = localStorage.getItem("theme");
           var dark = stored
@@ -55,7 +61,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340..600;1,9..144,340..600&family=Instrument+Sans:wght@400;500;600&family=Spline+Sans+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&family=Hanken+Grotesk:wght@400;500;600&family=Fragment+Mono&display=swap"
       rel="stylesheet"
     />
 
@@ -69,6 +75,15 @@
         "jobTitle": "Full-Stack Developer",
         "url": "https://dishant-08.github.io/",
         "email": "mailto:dishant.sahu07@gmail.com",
+        "knowsAbout": [
+          "TypeScript",
+          "Next.js",
+          "React",
+          "Go",
+          "Node.js",
+          "PostgreSQL",
+          "gRPC"
+        ],
         "worksFor": {
           "@type": "Organization",
           "name": "404Minds Technologies"
@@ -100,124 +115,40 @@
       Skip to content
     </a>
 
-    <!-- ─── Mobile top bar ─────────────────────────────────────────────────── -->
+    <!-- ─── Sticky chapter nav ─────────────────────────────────────────────── -->
     <header
-      class="lg:hidden sticky top-0 z-40 flex items-center justify-between border-b border-line bg-paper/95 backdrop-blur px-5 py-3"
+      class="sticky top-0 z-40 border-b border-line bg-paper/90 backdrop-blur"
     >
-      <a href="#top" class="font-display font-semibold text-lg tracking-tight"
-        >Dishant&nbsp;Sahu</a
+      <div
+        class="mx-auto flex h-16 max-w-shell items-center justify-between px-5 md:px-8"
       >
-      <div class="flex items-center gap-2">
-        <button
-          id="themeToggleMobile"
-          class="theme-toggle p-2 text-mute hover:text-ink transition-colors"
-          aria-label="Toggle dark mode"
-          aria-pressed="false"
-        >
-          <svg
-            class="icon-sun h-5 w-5"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.8"
-            aria-hidden="true"
-          >
-            <circle cx="12" cy="12" r="4" />
-            <path
-              d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4m11.4-11.4 1.4-1.4"
-            />
-          </svg>
-          <svg
-            class="icon-moon h-5 w-5"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.8"
-            aria-hidden="true"
-          >
-            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" />
-          </svg>
-        </button>
-        <button
-          id="menuToggle"
-          class="p-2 text-mute hover:text-ink transition-colors"
-          aria-label="Open menu"
-          aria-expanded="false"
-          aria-controls="mobileMenu"
-        >
-          <svg
-            class="h-5 w-5"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.8"
-            aria-hidden="true"
-          >
-            <path d="M3 6h18M3 12h18M3 18h18" />
-          </svg>
-        </button>
-      </div>
-    </header>
-
-    <nav
-      id="mobileMenu"
-      class="lg:hidden hidden sticky top-[49px] z-40 border-b border-line bg-paper px-5 py-4"
-      aria-label="Site sections"
-    >
-      <a href="#work" class="rail-link"><span class="no">01</span>Work</a>
-      <a href="#experience" class="rail-link"
-        ><span class="no">02</span>Experience</a
-      >
-      <a href="#skills" class="rail-link"><span class="no">03</span>Skills</a>
-      <a href="#education" class="rail-link"
-        ><span class="no">04</span>Education</a
-      >
-      <a href="#contact" class="rail-link"><span class="no">05</span>Contact</a>
-    </nav>
-
-    <!-- ─── Left rail (desktop) ────────────────────────────────────────────── -->
-    <aside
-      class="hidden lg:flex fixed inset-y-0 left-0 w-[19rem] flex-col justify-between border-r border-line px-10 py-12 z-30"
-    >
-      <div>
         <a
           href="#top"
-          class="block font-display font-semibold leading-[0.95] text-[2.6rem] tracking-tight"
+          class="font-display font-[520] text-xl tracking-tight leading-none"
         >
-          Dishant<br />Sahu
+          Dishant Sahu
         </a>
-        <p class="meta mt-4">Full-Stack Developer</p>
 
-        <nav class="mt-14" aria-label="Site sections">
-          <a href="#work" class="rail-link" data-spy="work"
-            ><span class="no">01</span>Work</a
+        <nav class="hidden lg:flex items-center gap-7" aria-label="Site sections">
+          <a href="#journey" class="nav-link" data-spy="journey">Journey</a>
+          <a href="#work" class="nav-link" data-spy="work">Work</a>
+          <a href="#github" class="nav-link" data-spy="github">GitHub</a>
+          <a href="#experience" class="nav-link" data-spy="experience"
+            >Experience</a
           >
-          <a href="#experience" class="rail-link" data-spy="experience"
-            ><span class="no">02</span>Experience</a
-          >
-          <a href="#skills" class="rail-link" data-spy="skills"
-            ><span class="no">03</span>Skills</a
-          >
-          <a href="#education" class="rail-link" data-spy="education"
-            ><span class="no">04</span>Education</a
-          >
-          <a href="#contact" class="rail-link" data-spy="contact"
-            ><span class="no">05</span>Contact</a
-          >
+          <a href="#skills" class="nav-link" data-spy="skills">Skills</a>
+          <a href="#contact" class="nav-link" data-spy="contact">Contact</a>
         </nav>
-      </div>
 
-      <div class="space-y-6">
-        <button
-          id="themeToggle"
-          class="theme-toggle group flex items-center gap-3 font-mono text-xs uppercase tracking-widest text-mute hover:text-ink transition-colors"
-          aria-pressed="false"
-        >
-          <span
-            class="grid place-items-center h-8 w-8 border border-line rounded-full group-hover:border-accent transition-colors"
+        <div class="flex items-center gap-1">
+          <button
+            id="themeToggle"
+            class="theme-toggle p-2 text-mute hover:text-ink transition-colors"
+            aria-label="Toggle dark mode"
+            aria-pressed="false"
           >
             <svg
-              class="icon-sun h-4 w-4"
+              class="icon-sun h-5 w-5"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -230,7 +161,7 @@
               />
             </svg>
             <svg
-              class="icon-moon h-4 w-4"
+              class="icon-moon h-5 w-5"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -239,144 +170,218 @@
             >
               <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" />
             </svg>
-          </span>
-          <span class="toggle-label">Dark mode</span>
-        </button>
+            <span class="toggle-label sr-only">Dark mode</span>
+          </button>
 
-        <ul class="flex items-center gap-4" aria-label="Profiles">
-          <li>
-            <a
-              href="https://github.com/dishant-08"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub"
-              class="text-mute hover:text-accent transition-colors"
-              ><svg
-                class="h-5 w-5"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.9 10.9c.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0C19.3 4.7 20.3 5 20.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.6.8.5A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z"
-                /></svg
-            ></a>
-          </li>
-          <li>
-            <a
-              href="https://www.linkedin.com/in/dishant-sahu-b18240244/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-              class="text-mute hover:text-accent transition-colors"
-              ><svg
-                class="h-5 w-5"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  d="M20.4 20.4h-3.5v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.4V9h3.4v1.6h.1c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.2 2.4 4.2 5.4v6.3ZM5.3 7.4a2 2 0 1 1 0-4.1 2 2 0 0 1 0 4.1Zm1.8 13H3.6V9h3.5v11.4ZM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 1 .8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7c0-1-.8-1.7-1.8-1.7Z"
-                /></svg
-            ></a>
-          </li>
-          <li>
-            <a
-              href="https://twitter.com/sahu_dishant"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Twitter / X"
-              class="text-mute hover:text-accent transition-colors"
-              ><svg
-                class="h-5 w-5"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  d="M18.9 1.2h3.7l-8.1 9.3L24 22.8h-7.5l-5.9-7.7-6.7 7.7H.2l8.6-9.9L0 1.2h7.7l5.3 7 6-7Zm-1.3 19.4h2L7.6 3.3h-2.2l12.2 17.3Z"
-                /></svg
-            ></a>
-          </li>
-          <li>
-            <a
-              href="mailto:dishant.sahu07@gmail.com"
-              aria-label="Email"
-              class="text-mute hover:text-accent transition-colors"
-              ><svg
-                class="h-5 w-5"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.8"
-                aria-hidden="true"
-              >
-                <rect x="3" y="5" width="18" height="14" rx="2" />
-                <path d="m3 7 9 6 9-6" /></svg
-            ></a>
-          </li>
-        </ul>
-
-        <p class="meta">Sambalpur, IN — IST</p>
+          <button
+            id="menuToggle"
+            class="lg:hidden p-2 text-mute hover:text-ink transition-colors"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="mobileMenu"
+          >
+            <svg
+              class="h-5 w-5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              aria-hidden="true"
+            >
+              <path d="M3 6h18M3 12h18M3 18h18" />
+            </svg>
+          </button>
+        </div>
       </div>
-    </aside>
+
+      <!-- Scroll progress hairline -->
+      <span
+        id="progress"
+        class="absolute inset-x-0 bottom-[-1px] block h-[2px] origin-left scale-x-0 bg-accent"
+        aria-hidden="true"
+      ></span>
+    </header>
+
+    <nav
+      id="mobileMenu"
+      class="lg:hidden hidden sticky top-16 z-40 border-b border-line bg-paper px-5 py-4"
+      aria-label="Site sections"
+    >
+      <div class="flex flex-col gap-1">
+        <a href="#journey" class="nav-link py-2"
+          ><span class="text-line mr-3">01</span>Journey</a
+        >
+        <a href="#work" class="nav-link py-2"
+          ><span class="text-line mr-3">02</span>Work</a
+        >
+        <a href="#github" class="nav-link py-2"
+          ><span class="text-line mr-3">03</span>GitHub</a
+        >
+        <a href="#experience" class="nav-link py-2"
+          ><span class="text-line mr-3">04</span>Experience</a
+        >
+        <a href="#skills" class="nav-link py-2"
+          ><span class="text-line mr-3">05</span>Skills</a
+        >
+        <a href="#contact" class="nav-link py-2"
+          ><span class="text-line mr-3">06</span>Contact</a
+        >
+      </div>
+    </nav>
 
     <!-- ─── Content ────────────────────────────────────────────────────────── -->
-    <main id="main" class="lg:ml-[19rem]">
-      <div class="px-5 md:px-12 xl:px-20 max-w-[52rem]">
+    <main id="main">
+      <div class="mx-auto max-w-shell px-5 md:px-8">
         <!-- Hero -->
         <section
           id="top"
-          class="min-h-[88vh] flex flex-col justify-center py-24"
+          class="flex min-h-[calc(100svh-4rem)] flex-col justify-center py-20"
         >
           <h1
-            class="hero-rise d1 font-display font-[420] tracking-tight leading-[1.04] text-[clamp(2.2rem,5.2vw,4rem)]"
+            class="hero-rise d1 max-w-[56rem] font-display font-[440] tracking-tight leading-[1.06] text-[clamp(2.4rem,5.6vw,4.5rem)]"
           >
             Software that moves
-            <em class="text-accent not-italic font-[560]">real&nbsp;money</em>,
-            runs
-            <em class="text-accent not-italic font-[560]"
-              >real&nbsp;interviews</em
-            >, and tracks
-            <em class="text-accent not-italic font-[560]"
-              >50,000&nbsp;vehicles</em
-            >
-            — live.
+            <em class="font-[520] text-accent">real&nbsp;money</em>, runs
+            <em class="font-[520] text-accent">real&nbsp;interviews</em>, and
+            tracks
+            <em class="font-[520] text-accent">50,000+&nbsp;vehicles</em> —
+            live.
           </h1>
           <p
             class="hero-rise d2 mt-8 max-w-prose2 text-lg leading-relaxed text-mute"
           >
-            I'm a full-stack developer at
-            <span class="text-ink font-medium">404Minds</span> working on
-            realtime fleet telematics, and the solo developer behind
-            <a href="#jumavo" class="link-draw text-ink font-medium">Jumavo</a>
+            I'm Dishant Sahu — full-stack developer at
+            <span class="font-medium text-ink">404Minds</span>, where I build
+            realtime fleet telematics, and solo developer of
+            <a href="#jumavo" class="link-draw font-medium text-ink">Jumavo</a>
             (healthcare payments) and
-            <a href="#wittybyte" class="link-draw text-ink font-medium"
+            <a href="#wittybyte" class="link-draw font-medium text-ink"
               >WittyByte</a
             >
-            (AI interview prep). TypeScript, Next.js, Go, PostgreSQL.
+            (AI interview prep). I own features end to end — schema design,
+            APIs, UI, payments, and the monitoring that keeps them honest.
           </p>
-          <div class="hero-rise d3 mt-10 flex flex-wrap items-center gap-8">
-            <a
-              href="#work"
-              class="font-mono text-sm uppercase tracking-widest text-accent link-draw"
-              >Selected work ↓</a
-            >
+          <div class="hero-rise d3 mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
             <a
               href="mailto:dishant.sahu07@gmail.com"
-              class="font-mono text-sm uppercase tracking-widest text-mute hover:text-ink link-draw"
+              class="link-draw font-mono text-sm uppercase tracking-widest text-accent"
               >dishant.sahu07@gmail.com</a
+            >
+            <a
+              href="#work"
+              class="link-draw font-mono text-sm uppercase tracking-widest text-mute hover:text-ink"
+              >Selected work ↓</a
             >
           </div>
         </section>
 
-        <!-- 01 Work -->
-        <section id="work" class="pb-24 scroll-mt-20">
-          <h2 class="section-label reveal">
-            <span class="no">01</span>Selected Work
-          </h2>
+        <!-- Verified numbers -->
+        <section aria-label="Proof in numbers" class="reveal pb-24">
+          <div
+            class="grid grid-cols-2 gap-y-10 border-y border-line py-10 lg:grid-cols-4 lg:divide-x lg:divide-line"
+          >
+            <div class="lg:px-8 lg:first:pl-0">
+              <p class="stat-num" data-count="2000" data-suffix="+" data-gh-rounded>
+                2,000+
+              </p>
+              <p class="meta mt-3">
+                GitHub contributions,<br />last 12 months
+              </p>
+            </div>
+            <div class="lg:px-8">
+              <p class="stat-num" data-count="530" data-suffix="+">530+</p>
+              <p class="meta mt-3">Pull requests merged<br />at 404Minds</p>
+            </div>
+            <div class="lg:px-8">
+              <p class="stat-num" data-count="3000" data-suffix="+">3,000+</p>
+              <p class="meta mt-3">
+                AI mock interviews<br />run on WittyByte
+              </p>
+            </div>
+            <div class="lg:px-8 lg:last:pr-0">
+              <p class="stat-num" data-count="50000" data-suffix="+">
+                50,000+
+              </p>
+              <p class="meta mt-3">Vehicles tracked live<br />by fleet platform</p>
+            </div>
+          </div>
+          <p class="meta mt-4 normal-case tracking-normal">
+            Counted, not estimated — GitHub API and production data,
+            <span data-gh-asof>July 2026</span>.
+          </p>
+        </section>
 
-          <article id="jumavo" class="work-row reveal mt-10">
+        <!-- 01 Journey -->
+        <section id="journey" class="pb-24 scroll-mt-24">
+          <div class="chapter-label reveal">
+            <span class="no">01</span>Journey
+          </div>
+          <h2 class="chapter-title reveal">How I got here</h2>
+
+          <ol class="timeline mt-12">
+            <li class="beat reveal">
+              <p class="meta">2019 — 2023</p>
+              <h3 class="mt-2 font-display font-[500] text-xl tracking-tight">
+                Circuits first
+              </h3>
+              <p class="mt-2 max-w-prose2 leading-relaxed text-mute">
+                B.Tech in Electronics and Telecommunication at VSSUT. For my
+                final-year project I implemented image encryption and
+                decryption in hardware with Xilinx System Generator and
+                validated it on an FPGA — I learned systems from the wires up.
+              </p>
+            </li>
+            <li class="beat reveal">
+              <p class="meta">2023</p>
+              <h3 class="mt-2 font-display font-[500] text-xl tracking-tight">
+                The web, the hard way
+              </h3>
+              <p class="mt-2 max-w-prose2 leading-relaxed text-mute">
+                Taught myself modern web development by shipping constantly:
+                storefronts, a YouTube clone, WebRTC video chat, a
+                Truecaller-style REST API. Most of it is still on GitHub —
+                unpolished and public on purpose.
+              </p>
+            </li>
+            <li class="beat reveal">
+              <p class="meta">2024 — today</p>
+              <h3 class="mt-2 font-display font-[500] text-xl tracking-tight">
+                Production scale at 404Minds
+              </h3>
+              <p class="mt-2 max-w-prose2 leading-relaxed text-mute">
+                Joined a remote engineering team building fleet telematics:
+                gRPC microservices, Go ingestion pipelines, ScyllaDB, and
+                dashboards rendering 50,000+ live vehicles. 530+ of my pull
+                requests have been merged since.
+              </p>
+            </li>
+            <li class="beat reveal">
+              <p class="meta">2023 — today</p>
+              <h3 class="mt-2 font-display font-[500] text-xl tracking-tight">
+                Products of my own
+              </h3>
+              <p class="mt-2 max-w-prose2 leading-relaxed text-mute">
+                Nights and weekends became Jumavo and WittyByte — both live,
+                both built end to end: product decisions, schema, payments,
+                auth, observability, deploys.
+              </p>
+            </li>
+          </ol>
+
+          <p
+            class="reveal mt-12 max-w-[40rem] font-display italic font-[460] text-[1.55rem] leading-snug tracking-tight"
+          >
+            I build because software you can bill, call, and track beats
+            software you can only demo.
+          </p>
+        </section>
+
+        <!-- 02 Work -->
+        <section id="work" class="pb-24 scroll-mt-24">
+          <div class="chapter-label reveal"><span class="no">02</span>Work</div>
+          <h2 class="chapter-title reveal">Selected work</h2>
+
+          <article id="jumavo" class="case-row reveal mt-10">
             <span class="row-no" aria-hidden="true">01</span>
             <div>
               <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1">
@@ -387,9 +392,12 @@
               </div>
               <p class="mt-4 max-w-prose2 leading-relaxed text-mute">
                 A health wallet that pays providers upfront and helps patients
-                save for the care they actually want. Stripe-backed payments,
-                QR-code patient onboarding, generated PDF statements,
-                invite-only early access.
+                save for the care they actually want. I designed and shipped
+                the whole product alone: Stripe-backed wallet flows — top-ups,
+                settlements, redemptions — provider, member, and admin
+                portals, QR-code patient onboarding, and generated PDF
+                statements, with Playwright end-to-end tests and Sentry
+                watching production.
               </p>
               <p class="meta mt-5">
                 Next.js · TypeScript · Prisma · PostgreSQL · Stripe · Better
@@ -400,7 +408,7 @@
                   href="https://app.jumavo.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="font-mono text-sm text-accent link-draw"
+                  class="link-draw font-mono text-sm text-accent"
                   >Visit Jumavo ↗</a
                 >
                 <span class="font-mono text-sm text-mute"
@@ -410,7 +418,7 @@
             </div>
           </article>
 
-          <article id="wittybyte" class="work-row reveal">
+          <article id="wittybyte" class="case-row reveal">
             <span class="row-no" aria-hidden="true">02</span>
             <div>
               <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1">
@@ -422,10 +430,12 @@
                 >
               </div>
               <p class="mt-4 max-w-prose2 leading-relaxed text-mute">
-                AI-powered interview prep for ML engineers: voice interview
-                simulations, a Monaco-based coding workspace, a curated question
-                bank from top tech companies, and readiness scoring — sold as
-                monthly subscriptions.
+                AI-powered interview prep for ML engineers, sold as monthly
+                subscriptions. Voice interview simulations on Retell, a
+                Monaco-based coding workspace, a curated question bank from
+                top tech companies, and readiness scoring — plus the
+                unglamorous parts that make it a business: Clerk auth with
+                webhook sync, Stripe billing, and PostHog funnels.
               </p>
               <p class="meta mt-5">
                 Next.js 14 · TypeScript · Prisma · Vercel Postgres · OpenAI ·
@@ -436,7 +446,7 @@
                   href="https://www.wittybyte.ai"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="font-mono text-sm text-accent link-draw"
+                  class="link-draw font-mono text-sm text-accent"
                   >Visit wittybyte.ai ↗</a
                 >
                 <span class="font-mono text-sm text-mute"
@@ -446,7 +456,7 @@
             </div>
           </article>
 
-          <article class="work-row reveal">
+          <article class="case-row reveal">
             <span class="row-no" aria-hidden="true">03</span>
             <div>
               <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1">
@@ -456,10 +466,11 @@
                 <span class="meta">404Minds · Client work — under NDA</span>
               </div>
               <p class="mt-4 max-w-prose2 leading-relaxed text-mute">
-                Production platform tracking 50,000+ vehicles live:
-                gRPC/Protobuf microservices on ScyllaDB and PostgreSQL, Go
-                ingestion consumers parsing GPS tracker protocols, Google Maps
-                clustering dashboards, and geofence alerting with ~60s latency.
+                A production platform tracking 50,000+ vehicles live. I build
+                across it: gRPC/Protobuf microservices on ScyllaDB and
+                PostgreSQL, Go ingestion consumers parsing GPS tracker
+                protocols, Google Maps clustering dashboards, and geofence
+                alerting that holds notification latency to about a minute.
               </p>
               <p class="meta mt-5">
                 TypeScript · Go · React · gRPC / Protobuf · ScyllaDB · Redis ·
@@ -470,7 +481,7 @@
                   href="https://github.com/404minds/avl-receiver"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="font-mono text-sm text-accent link-draw"
+                  class="link-draw font-mono text-sm text-accent"
                   >Open-source component ↗</a
                 >
               </div>
@@ -482,20 +493,20 @@
             <ul class="mt-4 divide-y divide-line border-y border-line">
               <li class="flex flex-wrap items-baseline gap-x-3 py-3">
                 <span class="font-medium">AI Resume Generator</span>
-                <span class="text-sm text-mute grow"
+                <span class="grow text-sm text-mute"
                   >OpenAI-assisted resume writing with PDF export — React,
                   OpenAI API</span
                 >
                 <span class="flex gap-4 font-mono text-xs">
                   <a
-                    class="text-accent link-draw"
+                    class="link-draw text-accent"
                     target="_blank"
                     rel="noopener noreferrer"
                     href="https://ai-resume-xi.vercel.app/"
                     >Live ↗</a
                   >
                   <a
-                    class="text-mute link-draw"
+                    class="link-draw text-mute"
                     target="_blank"
                     rel="noopener noreferrer"
                     href="https://github.com/dishant-08/aiResume"
@@ -505,20 +516,20 @@
               </li>
               <li class="flex flex-wrap items-baseline gap-x-3 py-3">
                 <span class="font-medium">Crypto Dashboard</span>
-                <span class="text-sm text-mute grow"
+                <span class="grow text-sm text-mute"
                   >Live market data from CoinGecko, built to a Figma spec —
                   React, Tailwind</span
                 >
                 <span class="flex gap-4 font-mono text-xs">
                   <a
-                    class="text-accent link-draw"
+                    class="link-draw text-accent"
                     target="_blank"
                     rel="noopener noreferrer"
                     href="https://crypto-dashb.netlify.app/"
                     >Live ↗</a
                   >
                   <a
-                    class="text-mute link-draw"
+                    class="link-draw text-mute"
                     target="_blank"
                     rel="noopener noreferrer"
                     href="https://github.com/dishant-08/KoinxAssignment"
@@ -528,20 +539,20 @@
               </li>
               <li class="flex flex-wrap items-baseline gap-x-3 py-3">
                 <span class="font-medium">YouTube Clone</span>
-                <span class="text-sm text-mute grow"
+                <span class="grow text-sm text-mute"
                   >Debounced search, nested comments, live chat — React,
                   Redux</span
                 >
                 <span class="flex gap-4 font-mono text-xs">
                   <a
-                    class="text-accent link-draw"
+                    class="link-draw text-accent"
                     target="_blank"
                     rel="noopener noreferrer"
                     href="https://my-youtube-lime.vercel.app/"
                     >Live ↗</a
                   >
                   <a
-                    class="text-mute link-draw"
+                    class="link-draw text-mute"
                     target="_blank"
                     rel="noopener noreferrer"
                     href="https://github.com/dishant-08/myYoutube"
@@ -551,20 +562,20 @@
               </li>
               <li class="flex flex-wrap items-baseline gap-x-3 py-3">
                 <span class="font-medium">E-commerce Storefront</span>
-                <span class="text-sm text-mute grow"
+                <span class="grow text-sm text-mute"
                   >Responsive store with persistent cart and wishlist —
                   React</span
                 >
                 <span class="flex gap-4 font-mono text-xs">
                   <a
-                    class="text-accent link-draw"
+                    class="link-draw text-accent"
                     target="_blank"
                     rel="noopener noreferrer"
                     href="https://ecommwebsite08.netlify.app/"
                     >Live ↗</a
                   >
                   <a
-                    class="text-mute link-draw"
+                    class="link-draw text-mute"
                     target="_blank"
                     rel="noopener noreferrer"
                     href="https://github.com/dishant-08/Ecommerce-Assigment"
@@ -574,20 +585,20 @@
               </li>
               <li class="flex flex-wrap items-baseline gap-x-3 py-3">
                 <span class="font-medium">100x Microblogging</span>
-                <span class="text-sm text-mute grow"
+                <span class="grow text-sm text-mute"
                   >Micro-social platform frontend — React, Vite, TanStack
                   Query, Tailwind CSS</span
                 >
                 <span class="flex gap-4 font-mono text-xs">
                   <a
-                    class="text-accent link-draw"
+                    class="link-draw text-accent"
                     target="_blank"
                     rel="noopener noreferrer"
                     href="https://react-week-1-dishant-08-hbrg.vercel.app/"
                     >Live ↗</a
                   >
                   <a
-                    class="text-mute link-draw"
+                    class="link-draw text-mute"
                     target="_blank"
                     rel="noopener noreferrer"
                     href="https://github.com/100x-Engineers/react-week-1-dishant-08"
@@ -597,13 +608,13 @@
               </li>
               <li class="flex flex-wrap items-baseline gap-x-3 py-3">
                 <span class="font-medium">Truecaller-style API</span>
-                <span class="text-sm text-mute grow"
+                <span class="grow text-sm text-mute"
                   >REST API with auth, spam reporting, number search — Node,
                   Express, Sequelize</span
                 >
                 <span class="flex gap-4 font-mono text-xs">
                   <a
-                    class="text-mute link-draw"
+                    class="link-draw text-mute"
                     target="_blank"
                     rel="noopener noreferrer"
                     href="https://github.com/dishant-08/asliCaller-api"
@@ -613,13 +624,13 @@
               </li>
               <li class="flex flex-wrap items-baseline gap-x-3 py-3">
                 <span class="font-medium">i-meet Video Chat</span>
-                <span class="text-sm text-mute grow"
+                <span class="grow text-sm text-mute"
                   >WebRTC rooms with in-call chat — Next.js, Socket.io,
                   PeerJS</span
                 >
                 <span class="flex gap-4 font-mono text-xs">
                   <a
-                    class="text-mute link-draw"
+                    class="link-draw text-mute"
                     target="_blank"
                     rel="noopener noreferrer"
                     href="https://github.com/dishant-08/i-meet"
@@ -632,17 +643,88 @@
               href="https://github.com/dishant-08?tab=repositories"
               target="_blank"
               rel="noopener noreferrer"
-              class="mt-4 inline-block font-mono text-sm text-mute hover:text-ink link-draw"
+              class="link-draw mt-4 inline-block font-mono text-sm text-mute hover:text-ink"
               >More on GitHub ↗</a
             >
           </div>
         </section>
 
-        <!-- 02 Experience -->
-        <section id="experience" class="pb-24 scroll-mt-20">
-          <h2 class="section-label reveal">
-            <span class="no">02</span>Experience
-          </h2>
+        <!-- 03 GitHub -->
+        <section id="github" class="pb-24 scroll-mt-24">
+          <div class="chapter-label reveal">
+            <span class="no">03</span>GitHub
+          </div>
+          <h2 class="chapter-title reveal">Consistency you can count</h2>
+
+          <p class="reveal mt-6 max-w-prose2 leading-relaxed text-mute">
+            <span class="font-medium text-ink" data-gh-total>2,007</span>
+            contributions in the last twelve months. Most of it is private
+            client and product work — GitHub counts it, and
+            <a
+              href="https://github.com/dishant-08"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="link-draw font-medium text-ink"
+              >the profile</a
+            >
+            confirms it.
+          </p>
+
+          <figure class="reveal mt-10">
+            <div class="wipe overflow-x-auto pb-2">
+              <!-- GH-HEATMAP:START — generated by scripts/refresh-github.mjs, do not hand-edit -->
+              <svg width="769" height="111" viewBox="0 0 769 111" role="img" aria-label="GitHub contribution calendar, Jul 2025 — Jul 2026: 2,007 contributions"><text class="hm-label" x="30" y="10">Jul</text><text class="hm-label" x="86" y="10">Aug</text><text class="hm-label" x="156" y="10">Sep</text><text class="hm-label" x="212" y="10">Oct</text><text class="hm-label" x="268" y="10">Nov</text><text class="hm-label" x="338" y="10">Dec</text><text class="hm-label" x="394" y="10">Jan</text><text class="hm-label" x="450" y="10">Feb</text><text class="hm-label" x="506" y="10">Mar</text><text class="hm-label" x="576" y="10">Apr</text><text class="hm-label" x="632" y="10">May</text><text class="hm-label" x="702" y="10">Jun</text><text class="hm-label" x="0" y="39">Mon</text><text class="hm-label" x="0" y="67">Wed</text><text class="hm-label" x="0" y="95">Fri</text><rect class="hm-1" x="30" y="16" width="11" height="11" rx="2.5"><title>1 contribution · 6 Jul 2025</title></rect><rect class="hm-1" x="30" y="30" width="11" height="11" rx="2.5"><title>4 contributions · 7 Jul 2025</title></rect><rect class="hm-1" x="30" y="44" width="11" height="11" rx="2.5"><title>5 contributions · 8 Jul 2025</title></rect><rect class="hm-1" x="30" y="58" width="11" height="11" rx="2.5"><title>3 contributions · 9 Jul 2025</title></rect><rect class="hm-1" x="30" y="72" width="11" height="11" rx="2.5"><title>3 contributions · 10 Jul 2025</title></rect><rect class="hm-0" x="30" y="86" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="30" y="100" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="44" y="16" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="44" y="30" width="11" height="11" rx="2.5"></rect><rect class="hm-1" x="44" y="44" width="11" height="11" rx="2.5"><title>5 contributions · 15 Jul 2025</title></rect><rect class="hm-1" x="44" y="58" width="11" height="11" rx="2.5"><title>1 contribution · 16 Jul 2025</title></rect><rect class="hm-0" x="44" y="72" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="44" y="86" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="44" y="100" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="58" y="16" width="11" height="11" rx="2.5"></rect><rect class="hm-1" x="58" y="30" width="11" height="11" rx="2.5"><title>5 contributions · 21 Jul 2025</title></rect><rect class="hm-1" x="58" y="44" width="11" height="11" rx="2.5"><title>6 contributions · 22 Jul 2025</title></rect><rect class="hm-1" x="58" y="58" width="11" height="11" rx="2.5"><title>8 contributions · 23 Jul 2025</title></rect><rect class="hm-1" x="58" y="72" width="11" height="11" rx="2.5"><title>3 contributions · 24 Jul 2025</title></rect><rect class="hm-0" x="58" y="86" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="58" y="100" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="72" y="16" width="11" height="11" rx="2.5"></rect><rect class="hm-1" x="72" y="30" width="11" height="11" rx="2.5"><title>3 contributions · 28 Jul 2025</title></rect><rect class="hm-1" x="72" y="44" width="11" height="11" rx="2.5"><title>3 contributions · 29 Jul 2025</title></rect><rect class="hm-0" x="72" y="58" width="11" height="11" rx="2.5"></rect><rect class="hm-1" x="72" y="72" width="11" height="11" rx="2.5"><title>5 contributions · 31 Jul 2025</title></rect><rect class="hm-1" x="72" y="86" width="11" height="11" rx="2.5"><title>4 contributions · 1 Aug 2025</title></rect><rect class="hm-0" x="72" y="100" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="86" y="16" width="11" height="11" rx="2.5"></rect><rect class="hm-1" x="86" y="30" width="11" height="11" rx="2.5"><title>3 contributions · 4 Aug 2025</title></rect><rect class="hm-1" x="86" y="44" width="11" height="11" rx="2.5"><title>6 contributions · 5 Aug 2025</title></rect><rect class="hm-1" x="86" y="58" width="11" height="11" rx="2.5"><title>2 contributions · 6 Aug 2025</title></rect><rect class="hm-1" x="86" y="72" width="11" height="11" rx="2.5"><title>5 contributions · 7 Aug 2025</title></rect><rect class="hm-1" x="86" y="86" width="11" height="11" rx="2.5"><title>15 contributions · 8 Aug 2025</title></rect><rect class="hm-0" x="86" y="100" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="100" y="16" width="11" height="11" rx="2.5"></rect><rect class="hm-1" x="100" y="30" width="11" height="11" rx="2.5"><title>2 contributions · 11 Aug 2025</title></rect><rect class="hm-1" x="100" y="44" width="11" height="11" rx="2.5"><title>6 contributions · 12 Aug 2025</title></rect><rect class="hm-1" x="100" y="58" width="11" height="11" rx="2.5"><title>3 contributions · 13 Aug 2025</title></rect><rect class="hm-1" x="100" y="72" width="11" height="11" rx="2.5"><title>15 contributions · 14 Aug 2025</title></rect><rect class="hm-0" x="100" y="86" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="100" y="100" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="114" y="16" width="11" height="11" rx="2.5"></rect><rect class="hm-1" x="114" y="30" width="11" height="11" rx="2.5"><title>3 contributions · 18 Aug 2025</title></rect><rect class="hm-1" x="114" y="44" width="11" height="11" rx="2.5"><title>6 contributions · 19 Aug 2025</title></rect><rect class="hm-1" x="114" y="58" width="11" height="11" rx="2.5"><title>16 contributions · 20 Aug 2025</title></rect><rect class="hm-1" x="114" y="72" width="11" height="11" rx="2.5"><title>4 contributions · 21 Aug 2025</title></rect><rect class="hm-1" x="114" y="86" width="11" height="11" rx="2.5"><title>5 contributions · 22 Aug 2025</title></rect><rect class="hm-0" x="114" y="100" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="128" y="16" width="11" height="11" rx="2.5"></rect><rect class="hm-1" x="128" y="30" width="11" height="11" rx="2.5"><title>4 contributions · 25 Aug 2025</title></rect><rect class="hm-1" x="128" y="44" width="11" height="11" rx="2.5"><title>15 contributions · 26 Aug 2025</title></rect><rect class="hm-1" x="128" y="58" width="11" height="11" rx="2.5"><title>4 contributions · 27 Aug 2025</title></rect><rect class="hm-1" x="128" y="72" width="11" height="11" rx="2.5"><title>6 contributions · 28 Aug 2025</title></rect><rect class="hm-1" x="128" y="86" width="11" height="11" rx="2.5"><title>3 contributions · 29 Aug 2025</title></rect><rect class="hm-0" x="128" y="100" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="142" y="16" width="11" height="11" rx="2.5"></rect><rect class="hm-1" x="142" y="30" width="11" height="11" rx="2.5"><title>2 contributions · 1 Sep 2025</title></rect><rect class="hm-1" x="142" y="44" width="11" height="11" rx="2.5"><title>4 contributions · 2 Sep 2025</title></rect><rect class="hm-0" x="142" y="58" width="11" height="11" rx="2.5"></rect><rect class="hm-1" x="142" y="72" width="11" height="11" rx="2.5"><title>6 contributions · 4 Sep 2025</title></rect><rect class="hm-1" x="142" y="86" width="11" height="11" rx="2.5"><title>13 contributions · 5 Sep 2025</title></rect><rect class="hm-0" x="142" y="100" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="156" y="16" width="11" height="11" rx="2.5"></rect><rect class="hm-1" x="156" y="30" width="11" height="11" rx="2.5"><title>2 contributions · 8 Sep 2025</title></rect><rect class="hm-0" x="156" y="44" width="11" height="11" rx="2.5"></rect><rect class="hm-1" x="156" y="58" width="11" height="11" rx="2.5"><title>3 contributions · 10 Sep 2025</title></rect><rect class="hm-1" x="156" y="72" width="11" height="11" rx="2.5"><title>2 contributions · 11 Sep 2025</title></rect><rect class="hm-1" x="156" y="86" width="11" height="11" rx="2.5"><title>4 contributions · 12 Sep 2025</title></rect><rect class="hm-0" x="156" y="100" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="170" y="16" width="11" height="11" rx="2.5"></rect><rect class="hm-1" x="170" y="30" width="11" height="11" rx="2.5"><title>5 contributions · 15 Sep 2025</title></rect><rect class="hm-1" x="170" y="44" width="11" height="11" rx="2.5"><title>3 contributions · 16 Sep 2025</title></rect><rect class="hm-1" x="170" y="58" width="11" height="11" rx="2.5"><title>3 contributions · 17 Sep 2025</title></rect><rect class="hm-1" x="170" y="72" width="11" height="11" rx="2.5"><title>3 contributions · 18 Sep 2025</title></rect><rect class="hm-1" x="170" y="86" width="11" height="11" rx="2.5"><title>4 contributions · 19 Sep 2025</title></rect><rect class="hm-0" x="170" y="100" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="184" y="16" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="184" y="30" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="184" y="44" width="11" height="11" rx="2.5"></rect><rect class="hm-1" x="184" y="58" width="11" height="11" rx="2.5"><title>1 contribution · 24 Sep 2025</title></rect><rect class="hm-0" x="184" y="72" width="11" height="11" rx="2.5"></rect><rect class="hm-1" x="184" y="86" width="11" height="11" rx="2.5"><title>3 contributions · 26 Sep 2025</title></rect><rect class="hm-0" x="184" y="100" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="198" y="16" width="11" height="11" rx="2.5"></rect><rect class="hm-1" x="198" y="30" width="11" height="11" rx="2.5"><title>5 contributions · 29 Sep 2025</title></rect><rect class="hm-1" x="198" y="44" width="11" height="11" rx="2.5"><title>11 contributions · 30 Sep 2025</title></rect><rect class="hm-1" x="198" y="58" width="11" height="11" rx="2.5"><title>4 contributions · 1 Oct 2025</title></rect><rect class="hm-1" x="198" y="72" width="11" height="11" rx="2.5"><title>3 contributions · 2 Oct 2025</title></rect><rect class="hm-1" x="198" y="86" width="11" height="11" rx="2.5"><title>9 contributions · 3 Oct 2025</title></rect><rect class="hm-0" x="198" y="100" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="212" y="16" width="11" height="11" rx="2.5"></rect><rect class="hm-1" x="212" y="30" width="11" height="11" rx="2.5"><title>1 contribution · 6 Oct 2025</title></rect><rect class="hm-1" x="212" y="44" width="11" height="11" rx="2.5"><title>2 contributions · 7 Oct 2025</title></rect><rect class="hm-0" x="212" y="58" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="212" y="72" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="212" y="86" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="212" y="100" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="226" y="16" width="11" height="11" rx="2.5"></rect><rect class="hm-1" x="226" y="30" width="11" height="11" rx="2.5"><title>4 contributions · 13 Oct 2025</title></rect><rect class="hm-1" x="226" y="44" width="11" height="11" rx="2.5"><title>7 contributions · 14 Oct 2025</title></rect><rect class="hm-1" x="226" y="58" width="11" height="11" rx="2.5"><title>7 contributions · 15 Oct 2025</title></rect><rect class="hm-1" x="226" y="72" width="11" height="11" rx="2.5"><title>4 contributions · 16 Oct 2025</title></rect><rect class="hm-1" x="226" y="86" width="11" height="11" rx="2.5"><title>5 contributions · 17 Oct 2025</title></rect><rect class="hm-0" x="226" y="100" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="240" y="16" width="11" height="11" rx="2.5"></rect><rect class="hm-1" x="240" y="30" width="11" height="11" rx="2.5"><title>1 contribution · 20 Oct 2025</title></rect><rect class="hm-1" x="240" y="44" width="11" height="11" rx="2.5"><title>1 contribution · 21 Oct 2025</title></rect><rect class="hm-1" x="240" y="58" width="11" height="11" rx="2.5"><title>2 contributions · 22 Oct 2025</title></rect><rect class="hm-1" x="240" y="72" width="11" height="11" rx="2.5"><title>2 contributions · 23 Oct 2025</title></rect><rect class="hm-1" x="240" y="86" width="11" height="11" rx="2.5"><title>6 contributions · 24 Oct 2025</title></rect><rect class="hm-0" x="240" y="100" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="254" y="16" width="11" height="11" rx="2.5"></rect><rect class="hm-1" x="254" y="30" width="11" height="11" rx="2.5"><title>3 contributions · 27 Oct 2025</title></rect><rect class="hm-1" x="254" y="44" width="11" height="11" rx="2.5"><title>5 contributions · 28 Oct 2025</title></rect><rect class="hm-1" x="254" y="58" width="11" height="11" rx="2.5"><title>5 contributions · 29 Oct 2025</title></rect><rect class="hm-1" x="254" y="72" width="11" height="11" rx="2.5"><title>4 contributions · 30 Oct 2025</title></rect><rect class="hm-1" x="254" y="86" width="11" height="11" rx="2.5"><title>2 contributions · 31 Oct 2025</title></rect><rect class="hm-0" x="254" y="100" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="268" y="16" width="11" height="11" rx="2.5"></rect><rect class="hm-1" x="268" y="30" width="11" height="11" rx="2.5"><title>1 contribution · 3 Nov 2025</title></rect><rect class="hm-1" x="268" y="44" width="11" height="11" rx="2.5"><title>1 contribution · 4 Nov 2025</title></rect><rect class="hm-0" x="268" y="58" width="11" height="11" rx="2.5"></rect><rect class="hm-1" x="268" y="72" width="11" height="11" rx="2.5"><title>10 contributions · 6 Nov 2025</title></rect><rect class="hm-1" x="268" y="86" width="11" height="11" rx="2.5"><title>3 contributions · 7 Nov 2025</title></rect><rect class="hm-0" x="268" y="100" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="282" y="16" width="11" height="11" rx="2.5"></rect><rect class="hm-1" x="282" y="30" width="11" height="11" rx="2.5"><title>20 contributions · 10 Nov 2025</title></rect><rect class="hm-1" x="282" y="44" width="11" height="11" rx="2.5"><title>7 contributions · 11 Nov 2025</title></rect><rect class="hm-1" x="282" y="58" width="11" height="11" rx="2.5"><title>13 contributions · 12 Nov 2025</title></rect><rect class="hm-1" x="282" y="72" width="11" height="11" rx="2.5"><title>6 contributions · 13 Nov 2025</title></rect><rect class="hm-1" x="282" y="86" width="11" height="11" rx="2.5"><title>13 contributions · 14 Nov 2025</title></rect><rect class="hm-1" x="282" y="100" width="11" height="11" rx="2.5"><title>1 contribution · 15 Nov 2025</title></rect><rect class="hm-1" x="296" y="16" width="11" height="11" rx="2.5"><title>3 contributions · 16 Nov 2025</title></rect><rect class="hm-1" x="296" y="30" width="11" height="11" rx="2.5"><title>6 contributions · 17 Nov 2025</title></rect><rect class="hm-1" x="296" y="44" width="11" height="11" rx="2.5"><title>3 contributions · 18 Nov 2025</title></rect><rect class="hm-1" x="296" y="58" width="11" height="11" rx="2.5"><title>2 contributions · 19 Nov 2025</title></rect><rect class="hm-1" x="296" y="72" width="11" height="11" rx="2.5"><title>4 contributions · 20 Nov 2025</title></rect><rect class="hm-1" x="296" y="86" width="11" height="11" rx="2.5"><title>3 contributions · 21 Nov 2025</title></rect><rect class="hm-1" x="296" y="100" width="11" height="11" rx="2.5"><title>2 contributions · 22 Nov 2025</title></rect><rect class="hm-1" x="310" y="16" width="11" height="11" rx="2.5"><title>2 contributions · 23 Nov 2025</title></rect><rect class="hm-1" x="310" y="30" width="11" height="11" rx="2.5"><title>6 contributions · 24 Nov 2025</title></rect><rect class="hm-1" x="310" y="44" width="11" height="11" rx="2.5"><title>9 contributions · 25 Nov 2025</title></rect><rect class="hm-1" x="310" y="58" width="11" height="11" rx="2.5"><title>15 contributions · 26 Nov 2025</title></rect><rect class="hm-1" x="310" y="72" width="11" height="11" rx="2.5"><title>6 contributions · 27 Nov 2025</title></rect><rect class="hm-1" x="310" y="86" width="11" height="11" rx="2.5"><title>3 contributions · 28 Nov 2025</title></rect><rect class="hm-0" x="310" y="100" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="324" y="16" width="11" height="11" rx="2.5"></rect><rect class="hm-1" x="324" y="30" width="11" height="11" rx="2.5"><title>5 contributions · 1 Dec 2025</title></rect><rect class="hm-1" x="324" y="44" width="11" height="11" rx="2.5"><title>5 contributions · 2 Dec 2025</title></rect><rect class="hm-1" x="324" y="58" width="11" height="11" rx="2.5"><title>5 contributions · 3 Dec 2025</title></rect><rect class="hm-1" x="324" y="72" width="11" height="11" rx="2.5"><title>4 contributions · 4 Dec 2025</title></rect><rect class="hm-1" x="324" y="86" width="11" height="11" rx="2.5"><title>3 contributions · 5 Dec 2025</title></rect><rect class="hm-0" x="324" y="100" width="11" height="11" rx="2.5"></rect><rect class="hm-1" x="338" y="16" width="11" height="11" rx="2.5"><title>2 contributions · 7 Dec 2025</title></rect><rect class="hm-1" x="338" y="30" width="11" height="11" rx="2.5"><title>4 contributions · 8 Dec 2025</title></rect><rect class="hm-1" x="338" y="44" width="11" height="11" rx="2.5"><title>6 contributions · 9 Dec 2025</title></rect><rect class="hm-1" x="338" y="58" width="11" height="11" rx="2.5"><title>7 contributions · 10 Dec 2025</title></rect><rect class="hm-1" x="338" y="72" width="11" height="11" rx="2.5"><title>2 contributions · 11 Dec 2025</title></rect><rect class="hm-1" x="338" y="86" width="11" height="11" rx="2.5"><title>11 contributions · 12 Dec 2025</title></rect><rect class="hm-1" x="338" y="100" width="11" height="11" rx="2.5"><title>2 contributions · 13 Dec 2025</title></rect><rect class="hm-1" x="352" y="16" width="11" height="11" rx="2.5"><title>2 contributions · 14 Dec 2025</title></rect><rect class="hm-1" x="352" y="30" width="11" height="11" rx="2.5"><title>8 contributions · 15 Dec 2025</title></rect><rect class="hm-1" x="352" y="44" width="11" height="11" rx="2.5"><title>10 contributions · 16 Dec 2025</title></rect><rect class="hm-1" x="352" y="58" width="11" height="11" rx="2.5"><title>8 contributions · 17 Dec 2025</title></rect><rect class="hm-1" x="352" y="72" width="11" height="11" rx="2.5"><title>10 contributions · 18 Dec 2025</title></rect><rect class="hm-1" x="352" y="86" width="11" height="11" rx="2.5"><title>7 contributions · 19 Dec 2025</title></rect><rect class="hm-0" x="352" y="100" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="366" y="16" width="11" height="11" rx="2.5"></rect><rect class="hm-1" x="366" y="30" width="11" height="11" rx="2.5"><title>2 contributions · 22 Dec 2025</title></rect><rect class="hm-1" x="366" y="44" width="11" height="11" rx="2.5"><title>12 contributions · 23 Dec 2025</title></rect><rect class="hm-0" x="366" y="58" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="366" y="72" width="11" height="11" rx="2.5"></rect><rect class="hm-1" x="366" y="86" width="11" height="11" rx="2.5"><title>2 contributions · 26 Dec 2025</title></rect><rect class="hm-0" x="366" y="100" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="380" y="16" width="11" height="11" rx="2.5"></rect><rect class="hm-1" x="380" y="30" width="11" height="11" rx="2.5"><title>5 contributions · 29 Dec 2025</title></rect><rect class="hm-1" x="380" y="44" width="11" height="11" rx="2.5"><title>1 contribution · 30 Dec 2025</title></rect><rect class="hm-1" x="380" y="58" width="11" height="11" rx="2.5"><title>12 contributions · 31 Dec 2025</title></rect><rect class="hm-0" x="380" y="72" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="380" y="86" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="380" y="100" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="394" y="16" width="11" height="11" rx="2.5"></rect><rect class="hm-1" x="394" y="30" width="11" height="11" rx="2.5"><title>7 contributions · 5 Jan 2026</title></rect><rect class="hm-1" x="394" y="44" width="11" height="11" rx="2.5"><title>7 contributions · 6 Jan 2026</title></rect><rect class="hm-1" x="394" y="58" width="11" height="11" rx="2.5"><title>3 contributions · 7 Jan 2026</title></rect><rect class="hm-1" x="394" y="72" width="11" height="11" rx="2.5"><title>12 contributions · 8 Jan 2026</title></rect><rect class="hm-1" x="394" y="86" width="11" height="11" rx="2.5"><title>5 contributions · 9 Jan 2026</title></rect><rect class="hm-0" x="394" y="100" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="408" y="16" width="11" height="11" rx="2.5"></rect><rect class="hm-1" x="408" y="30" width="11" height="11" rx="2.5"><title>12 contributions · 12 Jan 2026</title></rect><rect class="hm-2" x="408" y="44" width="11" height="11" rx="2.5"><title>26 contributions · 13 Jan 2026</title></rect><rect class="hm-1" x="408" y="58" width="11" height="11" rx="2.5"><title>6 contributions · 14 Jan 2026</title></rect><rect class="hm-1" x="408" y="72" width="11" height="11" rx="2.5"><title>1 contribution · 15 Jan 2026</title></rect><rect class="hm-1" x="408" y="86" width="11" height="11" rx="2.5"><title>4 contributions · 16 Jan 2026</title></rect><rect class="hm-0" x="408" y="100" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="422" y="16" width="11" height="11" rx="2.5"></rect><rect class="hm-1" x="422" y="30" width="11" height="11" rx="2.5"><title>2 contributions · 19 Jan 2026</title></rect><rect class="hm-1" x="422" y="44" width="11" height="11" rx="2.5"><title>4 contributions · 20 Jan 2026</title></rect><rect class="hm-1" x="422" y="58" width="11" height="11" rx="2.5"><title>12 contributions · 21 Jan 2026</title></rect><rect class="hm-1" x="422" y="72" width="11" height="11" rx="2.5"><title>1 contribution · 22 Jan 2026</title></rect><rect class="hm-1" x="422" y="86" width="11" height="11" rx="2.5"><title>1 contribution · 23 Jan 2026</title></rect><rect class="hm-0" x="422" y="100" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="436" y="16" width="11" height="11" rx="2.5"></rect><rect class="hm-1" x="436" y="30" width="11" height="11" rx="2.5"><title>8 contributions · 26 Jan 2026</title></rect><rect class="hm-1" x="436" y="44" width="11" height="11" rx="2.5"><title>1 contribution · 27 Jan 2026</title></rect><rect class="hm-1" x="436" y="58" width="11" height="11" rx="2.5"><title>2 contributions · 28 Jan 2026</title></rect><rect class="hm-1" x="436" y="72" width="11" height="11" rx="2.5"><title>2 contributions · 29 Jan 2026</title></rect><rect class="hm-1" x="436" y="86" width="11" height="11" rx="2.5"><title>2 contributions · 30 Jan 2026</title></rect><rect class="hm-0" x="436" y="100" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="450" y="16" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="450" y="30" width="11" height="11" rx="2.5"></rect><rect class="hm-1" x="450" y="44" width="11" height="11" rx="2.5"><title>1 contribution · 3 Feb 2026</title></rect><rect class="hm-0" x="450" y="58" width="11" height="11" rx="2.5"></rect><rect class="hm-1" x="450" y="72" width="11" height="11" rx="2.5"><title>1 contribution · 5 Feb 2026</title></rect><rect class="hm-0" x="450" y="86" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="450" y="100" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="464" y="16" width="11" height="11" rx="2.5"></rect><rect class="hm-1" x="464" y="30" width="11" height="11" rx="2.5"><title>1 contribution · 9 Feb 2026</title></rect><rect class="hm-0" x="464" y="44" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="464" y="58" width="11" height="11" rx="2.5"></rect><rect class="hm-1" x="464" y="72" width="11" height="11" rx="2.5"><title>2 contributions · 12 Feb 2026</title></rect><rect class="hm-0" x="464" y="86" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="464" y="100" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="478" y="16" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="478" y="30" width="11" height="11" rx="2.5"></rect><rect class="hm-1" x="478" y="44" width="11" height="11" rx="2.5"><title>2 contributions · 17 Feb 2026</title></rect><rect class="hm-1" x="478" y="58" width="11" height="11" rx="2.5"><title>3 contributions · 18 Feb 2026</title></rect><rect class="hm-1" x="478" y="72" width="11" height="11" rx="2.5"><title>5 contributions · 19 Feb 2026</title></rect><rect class="hm-0" x="478" y="86" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="478" y="100" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="492" y="16" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="492" y="30" width="11" height="11" rx="2.5"></rect><rect class="hm-1" x="492" y="44" width="11" height="11" rx="2.5"><title>2 contributions · 24 Feb 2026</title></rect><rect class="hm-1" x="492" y="58" width="11" height="11" rx="2.5"><title>1 contribution · 25 Feb 2026</title></rect><rect class="hm-1" x="492" y="72" width="11" height="11" rx="2.5"><title>4 contributions · 26 Feb 2026</title></rect><rect class="hm-1" x="492" y="86" width="11" height="11" rx="2.5"><title>4 contributions · 27 Feb 2026</title></rect><rect class="hm-0" x="492" y="100" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="506" y="16" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="506" y="30" width="11" height="11" rx="2.5"></rect><rect class="hm-1" x="506" y="44" width="11" height="11" rx="2.5"><title>4 contributions · 3 Mar 2026</title></rect><rect class="hm-1" x="506" y="58" width="11" height="11" rx="2.5"><title>3 contributions · 4 Mar 2026</title></rect><rect class="hm-1" x="506" y="72" width="11" height="11" rx="2.5"><title>4 contributions · 5 Mar 2026</title></rect><rect class="hm-0" x="506" y="86" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="506" y="100" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="520" y="16" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="520" y="30" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="520" y="44" width="11" height="11" rx="2.5"></rect><rect class="hm-1" x="520" y="58" width="11" height="11" rx="2.5"><title>6 contributions · 11 Mar 2026</title></rect><rect class="hm-1" x="520" y="72" width="11" height="11" rx="2.5"><title>3 contributions · 12 Mar 2026</title></rect><rect class="hm-0" x="520" y="86" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="520" y="100" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="534" y="16" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="534" y="30" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="534" y="44" width="11" height="11" rx="2.5"></rect><rect class="hm-1" x="534" y="58" width="11" height="11" rx="2.5"><title>1 contribution · 18 Mar 2026</title></rect><rect class="hm-1" x="534" y="72" width="11" height="11" rx="2.5"><title>3 contributions · 19 Mar 2026</title></rect><rect class="hm-1" x="534" y="86" width="11" height="11" rx="2.5"><title>1 contribution · 20 Mar 2026</title></rect><rect class="hm-0" x="534" y="100" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="548" y="16" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="548" y="30" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="548" y="44" width="11" height="11" rx="2.5"></rect><rect class="hm-1" x="548" y="58" width="11" height="11" rx="2.5"><title>2 contributions · 25 Mar 2026</title></rect><rect class="hm-0" x="548" y="72" width="11" height="11" rx="2.5"></rect><rect class="hm-1" x="548" y="86" width="11" height="11" rx="2.5"><title>3 contributions · 27 Mar 2026</title></rect><rect class="hm-0" x="548" y="100" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="562" y="16" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="562" y="30" width="11" height="11" rx="2.5"></rect><rect class="hm-1" x="562" y="44" width="11" height="11" rx="2.5"><title>2 contributions · 31 Mar 2026</title></rect><rect class="hm-1" x="562" y="58" width="11" height="11" rx="2.5"><title>1 contribution · 1 Apr 2026</title></rect><rect class="hm-1" x="562" y="72" width="11" height="11" rx="2.5"><title>4 contributions · 2 Apr 2026</title></rect><rect class="hm-1" x="562" y="86" width="11" height="11" rx="2.5"><title>8 contributions · 3 Apr 2026</title></rect><rect class="hm-0" x="562" y="100" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="576" y="16" width="11" height="11" rx="2.5"></rect><rect class="hm-1" x="576" y="30" width="11" height="11" rx="2.5"><title>10 contributions · 6 Apr 2026</title></rect><rect class="hm-1" x="576" y="44" width="11" height="11" rx="2.5"><title>6 contributions · 7 Apr 2026</title></rect><rect class="hm-1" x="576" y="58" width="11" height="11" rx="2.5"><title>3 contributions · 8 Apr 2026</title></rect><rect class="hm-1" x="576" y="72" width="11" height="11" rx="2.5"><title>5 contributions · 9 Apr 2026</title></rect><rect class="hm-1" x="576" y="86" width="11" height="11" rx="2.5"><title>8 contributions · 10 Apr 2026</title></rect><rect class="hm-1" x="576" y="100" width="11" height="11" rx="2.5"><title>3 contributions · 11 Apr 2026</title></rect><rect class="hm-0" x="590" y="16" width="11" height="11" rx="2.5"></rect><rect class="hm-1" x="590" y="30" width="11" height="11" rx="2.5"><title>1 contribution · 13 Apr 2026</title></rect><rect class="hm-1" x="590" y="44" width="11" height="11" rx="2.5"><title>20 contributions · 14 Apr 2026</title></rect><rect class="hm-1" x="590" y="58" width="11" height="11" rx="2.5"><title>18 contributions · 15 Apr 2026</title></rect><rect class="hm-3" x="590" y="72" width="11" height="11" rx="2.5"><title>54 contributions · 16 Apr 2026</title></rect><rect class="hm-1" x="590" y="86" width="11" height="11" rx="2.5"><title>18 contributions · 17 Apr 2026</title></rect><rect class="hm-3" x="590" y="100" width="11" height="11" rx="2.5"><title>60 contributions · 18 Apr 2026</title></rect><rect class="hm-1" x="604" y="16" width="11" height="11" rx="2.5"><title>1 contribution · 19 Apr 2026</title></rect><rect class="hm-1" x="604" y="30" width="11" height="11" rx="2.5"><title>8 contributions · 20 Apr 2026</title></rect><rect class="hm-1" x="604" y="44" width="11" height="11" rx="2.5"><title>9 contributions · 21 Apr 2026</title></rect><rect class="hm-2" x="604" y="58" width="11" height="11" rx="2.5"><title>31 contributions · 22 Apr 2026</title></rect><rect class="hm-2" x="604" y="72" width="11" height="11" rx="2.5"><title>38 contributions · 23 Apr 2026</title></rect><rect class="hm-3" x="604" y="86" width="11" height="11" rx="2.5"><title>54 contributions · 24 Apr 2026</title></rect><rect class="hm-3" x="604" y="100" width="11" height="11" rx="2.5"><title>65 contributions · 25 Apr 2026</title></rect><rect class="hm-1" x="618" y="16" width="11" height="11" rx="2.5"><title>2 contributions · 26 Apr 2026</title></rect><rect class="hm-2" x="618" y="30" width="11" height="11" rx="2.5"><title>45 contributions · 27 Apr 2026</title></rect><rect class="hm-4" x="618" y="44" width="11" height="11" rx="2.5"><title>96 contributions · 28 Apr 2026</title></rect><rect class="hm-3" x="618" y="58" width="11" height="11" rx="2.5"><title>59 contributions · 29 Apr 2026</title></rect><rect class="hm-4" x="618" y="72" width="11" height="11" rx="2.5"><title>79 contributions · 30 Apr 2026</title></rect><rect class="hm-3" x="618" y="86" width="11" height="11" rx="2.5"><title>68 contributions · 1 May 2026</title></rect><rect class="hm-1" x="618" y="100" width="11" height="11" rx="2.5"><title>21 contributions · 2 May 2026</title></rect><rect class="hm-1" x="632" y="16" width="11" height="11" rx="2.5"><title>4 contributions · 3 May 2026</title></rect><rect class="hm-1" x="632" y="30" width="11" height="11" rx="2.5"><title>11 contributions · 4 May 2026</title></rect><rect class="hm-1" x="632" y="44" width="11" height="11" rx="2.5"><title>12 contributions · 5 May 2026</title></rect><rect class="hm-1" x="632" y="58" width="11" height="11" rx="2.5"><title>7 contributions · 6 May 2026</title></rect><rect class="hm-1" x="632" y="72" width="11" height="11" rx="2.5"><title>4 contributions · 7 May 2026</title></rect><rect class="hm-1" x="632" y="86" width="11" height="11" rx="2.5"><title>11 contributions · 8 May 2026</title></rect><rect class="hm-1" x="632" y="100" width="11" height="11" rx="2.5"><title>16 contributions · 9 May 2026</title></rect><rect class="hm-1" x="646" y="16" width="11" height="11" rx="2.5"><title>7 contributions · 10 May 2026</title></rect><rect class="hm-1" x="646" y="30" width="11" height="11" rx="2.5"><title>2 contributions · 11 May 2026</title></rect><rect class="hm-1" x="646" y="44" width="11" height="11" rx="2.5"><title>6 contributions · 12 May 2026</title></rect><rect class="hm-1" x="646" y="58" width="11" height="11" rx="2.5"><title>10 contributions · 13 May 2026</title></rect><rect class="hm-1" x="646" y="72" width="11" height="11" rx="2.5"><title>4 contributions · 14 May 2026</title></rect><rect class="hm-1" x="646" y="86" width="11" height="11" rx="2.5"><title>3 contributions · 15 May 2026</title></rect><rect class="hm-1" x="646" y="100" width="11" height="11" rx="2.5"><title>1 contribution · 16 May 2026</title></rect><rect class="hm-1" x="660" y="16" width="11" height="11" rx="2.5"><title>1 contribution · 17 May 2026</title></rect><rect class="hm-1" x="660" y="30" width="11" height="11" rx="2.5"><title>1 contribution · 18 May 2026</title></rect><rect class="hm-1" x="660" y="44" width="11" height="11" rx="2.5"><title>2 contributions · 19 May 2026</title></rect><rect class="hm-1" x="660" y="58" width="11" height="11" rx="2.5"><title>4 contributions · 20 May 2026</title></rect><rect class="hm-3" x="660" y="72" width="11" height="11" rx="2.5"><title>51 contributions · 21 May 2026</title></rect><rect class="hm-1" x="660" y="86" width="11" height="11" rx="2.5"><title>5 contributions · 22 May 2026</title></rect><rect class="hm-0" x="660" y="100" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="674" y="16" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="674" y="30" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="674" y="44" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="674" y="58" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="674" y="72" width="11" height="11" rx="2.5"></rect><rect class="hm-1" x="674" y="86" width="11" height="11" rx="2.5"><title>5 contributions · 29 May 2026</title></rect><rect class="hm-1" x="674" y="100" width="11" height="11" rx="2.5"><title>1 contribution · 30 May 2026</title></rect><rect class="hm-4" x="688" y="16" width="11" height="11" rx="2.5"><title>73 contributions · 31 May 2026</title></rect><rect class="hm-4" x="688" y="30" width="11" height="11" rx="2.5"><title>78 contributions · 1 Jun 2026</title></rect><rect class="hm-1" x="688" y="44" width="11" height="11" rx="2.5"><title>2 contributions · 2 Jun 2026</title></rect><rect class="hm-1" x="688" y="58" width="11" height="11" rx="2.5"><title>1 contribution · 3 Jun 2026</title></rect><rect class="hm-1" x="688" y="72" width="11" height="11" rx="2.5"><title>6 contributions · 4 Jun 2026</title></rect><rect class="hm-1" x="688" y="86" width="11" height="11" rx="2.5"><title>5 contributions · 5 Jun 2026</title></rect><rect class="hm-0" x="688" y="100" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="702" y="16" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="702" y="30" width="11" height="11" rx="2.5"></rect><rect class="hm-1" x="702" y="44" width="11" height="11" rx="2.5"><title>1 contribution · 9 Jun 2026</title></rect><rect class="hm-1" x="702" y="58" width="11" height="11" rx="2.5"><title>4 contributions · 10 Jun 2026</title></rect><rect class="hm-1" x="702" y="72" width="11" height="11" rx="2.5"><title>22 contributions · 11 Jun 2026</title></rect><rect class="hm-1" x="702" y="86" width="11" height="11" rx="2.5"><title>2 contributions · 12 Jun 2026</title></rect><rect class="hm-1" x="702" y="100" width="11" height="11" rx="2.5"><title>1 contribution · 13 Jun 2026</title></rect><rect class="hm-0" x="716" y="16" width="11" height="11" rx="2.5"></rect><rect class="hm-1" x="716" y="30" width="11" height="11" rx="2.5"><title>3 contributions · 15 Jun 2026</title></rect><rect class="hm-1" x="716" y="44" width="11" height="11" rx="2.5"><title>3 contributions · 16 Jun 2026</title></rect><rect class="hm-1" x="716" y="58" width="11" height="11" rx="2.5"><title>1 contribution · 17 Jun 2026</title></rect><rect class="hm-1" x="716" y="72" width="11" height="11" rx="2.5"><title>1 contribution · 18 Jun 2026</title></rect><rect class="hm-0" x="716" y="86" width="11" height="11" rx="2.5"></rect><rect class="hm-1" x="716" y="100" width="11" height="11" rx="2.5"><title>1 contribution · 20 Jun 2026</title></rect><rect class="hm-0" x="730" y="16" width="11" height="11" rx="2.5"></rect><rect class="hm-1" x="730" y="30" width="11" height="11" rx="2.5"><title>5 contributions · 22 Jun 2026</title></rect><rect class="hm-1" x="730" y="44" width="11" height="11" rx="2.5"><title>5 contributions · 23 Jun 2026</title></rect><rect class="hm-1" x="730" y="58" width="11" height="11" rx="2.5"><title>4 contributions · 24 Jun 2026</title></rect><rect class="hm-1" x="730" y="72" width="11" height="11" rx="2.5"><title>6 contributions · 25 Jun 2026</title></rect><rect class="hm-1" x="730" y="86" width="11" height="11" rx="2.5"><title>7 contributions · 26 Jun 2026</title></rect><rect class="hm-1" x="730" y="100" width="11" height="11" rx="2.5"><title>2 contributions · 27 Jun 2026</title></rect><rect class="hm-0" x="744" y="16" width="11" height="11" rx="2.5"></rect><rect class="hm-1" x="744" y="30" width="11" height="11" rx="2.5"><title>1 contribution · 29 Jun 2026</title></rect><rect class="hm-1" x="744" y="44" width="11" height="11" rx="2.5"><title>4 contributions · 30 Jun 2026</title></rect><rect class="hm-1" x="744" y="58" width="11" height="11" rx="2.5"><title>9 contributions · 1 Jul 2026</title></rect><rect class="hm-1" x="744" y="72" width="11" height="11" rx="2.5"><title>5 contributions · 2 Jul 2026</title></rect><rect class="hm-1" x="744" y="86" width="11" height="11" rx="2.5"><title>7 contributions · 3 Jul 2026</title></rect><rect class="hm-0" x="744" y="100" width="11" height="11" rx="2.5"></rect><rect class="hm-0" x="758" y="16" width="11" height="11" rx="2.5"></rect><rect class="hm-1" x="758" y="30" width="11" height="11" rx="2.5"><title>2 contributions · 6 Jul 2026</title></rect><rect class="hm-0" x="758" y="44" width="11" height="11" rx="2.5"></rect></svg>
+              <!-- GH-HEATMAP:END -->
+            </div>
+            <figcaption
+              class="mt-3 flex flex-wrap items-center justify-between gap-x-6 gap-y-2"
+            >
+              <span class="meta normal-case tracking-normal">
+                <span data-gh-range>Jul 2025 — Jul 2026</span> · includes
+                private-repo activity · fetched from the GitHub API
+              </span>
+              <span
+                class="flex items-center gap-1.5 font-mono text-[0.65rem] uppercase tracking-widest text-mute"
+                aria-hidden="true"
+              >
+                Less
+                <i class="hm-key" style="background: rgb(var(--hm-0))"></i>
+                <i class="hm-key" style="background: rgb(var(--hm-1))"></i>
+                <i class="hm-key" style="background: rgb(var(--hm-2))"></i>
+                <i class="hm-key" style="background: rgb(var(--hm-3))"></i>
+                <i class="hm-key" style="background: rgb(var(--hm-4))"></i>
+                More
+              </span>
+            </figcaption>
+          </figure>
+
+          <div
+            class="reveal mt-10 grid grid-cols-1 gap-y-6 border-t border-line pt-8 sm:grid-cols-3"
+          >
+            <div>
+              <p class="font-display font-[480] text-2xl tracking-tight">
+                530+
+              </p>
+              <p class="meta mt-1">PRs merged at 404Minds</p>
+            </div>
+            <div>
+              <p class="font-display font-[480] text-2xl tracking-tight">
+                150+
+              </p>
+              <p class="meta mt-1">Peer PRs reviewed</p>
+            </div>
+            <div>
+              <p class="font-display font-[480] text-2xl tracking-tight">7</p>
+              <p class="meta mt-1">Production repos</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 04 Experience -->
+        <section id="experience" class="pb-24 scroll-mt-24">
+          <div class="chapter-label reveal">
+            <span class="no">04</span>Experience
+          </div>
 
           <article class="reveal mt-10">
             <div class="flex flex-wrap items-baseline justify-between gap-2">
@@ -653,16 +735,16 @@
             </div>
             <p class="meta mt-1">Software Developer · Remote</p>
             <ul
-              class="mt-4 space-y-2 max-w-prose2 leading-relaxed text-mute list-disc pl-5 marker:text-accent"
+              class="mt-4 max-w-prose2 list-disc space-y-2 pl-5 leading-relaxed text-mute marker:text-accent"
             >
               <li>
                 Built Go and Node.js gRPC/Protobuf microservices — telemetry
-                ingestion, geocoding, notifications, reporting — on horizontally
-                partitioned ScyllaDB and PostgreSQL.
+                ingestion, geocoding, notifications, reporting — on
+                horizontally partitioned ScyllaDB and PostgreSQL.
               </li>
               <li>
-                Developed a realtime fleet dashboard in React + TypeScript with
-                Google Maps clustering, rendering 50,000+ vehicles live.
+                Developed a realtime fleet dashboard in React + TypeScript
+                with Google Maps clustering, rendering 50,000+ vehicles live.
               </li>
               <li>
                 Automated geofence breach alerts on a 1-minute cron, holding
@@ -670,9 +752,9 @@
                 minutes with Uptime Kuma.
               </li>
               <li>
-                Architected a custom CMS in React and Vite with Tiptap rich-text
-                editing and AWS S3 media uploads, backed by Amazon RDS and
-                deployed on AWS Amplify.
+                Architected a custom CMS in React and Vite with Tiptap
+                rich-text editing and AWS S3 media uploads, backed by Amazon
+                RDS and deployed on AWS Amplify.
               </li>
             </ul>
           </article>
@@ -690,13 +772,34 @@
               design, payments, auth, observability, and deployment.
             </p>
           </article>
+
+          <article class="reveal mt-12 border-t border-line pt-8">
+            <h3 class="meta">Education</h3>
+            <div class="mt-4 flex flex-wrap items-baseline justify-between gap-2">
+              <p class="font-display font-[520] text-xl tracking-tight">
+                Veer Surendra Sai University of Technology
+              </p>
+              <span class="meta">2019 — 2023</span>
+            </div>
+            <p class="mt-2 text-mute">
+              B.Tech, Electronics and Telecommunication Engineering — CGPA
+              8.37 · Sambalpur, India
+            </p>
+            <p class="mt-1 text-sm text-mute">
+              Final-year B.Tech project: hardware implementation of image
+              encryption/decryption with Xilinx System Generator, validated on
+              FPGA.
+            </p>
+          </article>
         </section>
 
-        <!-- 03 Skills -->
-        <section id="skills" class="pb-24 scroll-mt-20">
-          <h2 class="section-label reveal"><span class="no">03</span>Skills</h2>
+        <!-- 05 Skills -->
+        <section id="skills" class="pb-24 scroll-mt-24">
+          <div class="chapter-label reveal">
+            <span class="no">05</span>Skills
+          </div>
           <div
-            class="reveal mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-8"
+            class="reveal mt-10 grid grid-cols-1 gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3"
           >
             <div>
               <h3 class="meta mb-3">Languages</h3>
@@ -733,54 +836,32 @@
             <div>
               <h3 class="meta mb-3">Testing, Services &amp; Tools</h3>
               <p class="leading-7 text-mute">
-                Playwright, Stripe, Clerk, Better Auth, Sentry, PostHog, Uptime
-                Kuma, OpenAI API, Resend, Postman, Figma
+                Playwright, Stripe, Clerk, Better Auth, Sentry, PostHog,
+                Uptime Kuma, OpenAI API, Resend, Postman, Figma
               </p>
             </div>
           </div>
         </section>
 
-        <!-- 04 Education -->
-        <section id="education" class="pb-24 scroll-mt-20">
-          <h2 class="section-label reveal">
-            <span class="no">04</span>Education
-          </h2>
-
-          <div class="reveal mt-10 space-y-10">
-            <article>
-              <div class="flex flex-wrap items-baseline justify-between gap-2">
-                <h3 class="font-display font-[520] text-2xl tracking-tight">
-                  Veer Surendra Sai University of Technology
-                </h3>
-                <span class="meta">2019 — 2023</span>
-              </div>
-              <p class="mt-2 text-mute">
-                B.Tech, Electronics and Telecommunication Engineering — CGPA
-                8.37 · Sambalpur, India
-              </p>
-              <p class="mt-1 text-sm text-mute">
-                Final-year B.Tech project: hardware implementation of image
-                encryption/decryption with Xilinx System Generator, validated on
-                FPGA.
-              </p>
-            </article>
+        <!-- 06 Contact -->
+        <section id="contact" class="pb-28 scroll-mt-24">
+          <div class="chapter-label reveal">
+            <span class="no">06</span>Contact
           </div>
-        </section>
-
-        <!-- 05 Contact -->
-        <section id="contact" class="pb-28 scroll-mt-20">
-          <h2 class="section-label reveal">
-            <span class="no">05</span>Contact
-          </h2>
           <div class="reveal mt-12">
             <p
-              class="font-display font-[420] tracking-tight leading-tight text-[clamp(1.8rem,3.6vw,2.8rem)] max-w-[36rem]"
+              class="max-w-[36rem] font-display font-[440] tracking-tight leading-tight text-[clamp(1.9rem,3.8vw,2.9rem)]"
             >
-              Have something worth building?
+              Have something worth
+              <em class="font-[520] text-accent">building</em>?
+            </p>
+            <p class="mt-5 max-w-prose2 leading-relaxed text-mute">
+              I'm open to full-time roles and serious product work. Email is
+              fastest.
             </p>
             <a
               href="mailto:dishant.sahu07@gmail.com"
-              class="mt-6 inline-block font-mono text-lg md:text-xl text-accent link-draw break-all"
+              class="link-draw mt-6 inline-block break-all font-mono text-lg text-accent md:text-xl"
             >
               dishant.sahu07@gmail.com
             </a>
@@ -790,7 +871,7 @@
             >
               <li>
                 <a
-                  class="text-mute hover:text-ink link-draw"
+                  class="link-draw text-mute hover:text-ink"
                   target="_blank"
                   rel="noopener noreferrer"
                   href="https://github.com/dishant-08"
@@ -799,7 +880,7 @@
               </li>
               <li>
                 <a
-                  class="text-mute hover:text-ink link-draw"
+                  class="link-draw text-mute hover:text-ink"
                   target="_blank"
                   rel="noopener noreferrer"
                   href="https://www.linkedin.com/in/dishant-sahu-b18240244/"
@@ -808,7 +889,7 @@
               </li>
               <li>
                 <a
-                  class="text-mute hover:text-ink link-draw"
+                  class="link-draw text-mute hover:text-ink"
                   target="_blank"
                   rel="noopener noreferrer"
                   href="https://twitter.com/sahu_dishant"
@@ -816,15 +897,16 @@
                 >
               </li>
             </ul>
+            <p class="meta mt-8">Sambalpur, India · IST (UTC+05:30)</p>
           </div>
         </section>
 
         <footer
-          class="border-t border-line py-8 flex flex-wrap items-baseline justify-between gap-3"
+          class="flex flex-wrap items-baseline justify-between gap-3 border-t border-line py-8"
         >
           <p class="meta">© <span id="year"></span> Dishant Sahu</p>
           <p class="meta">
-            Hand-built — set in Fraunces &amp; Spline Sans Mono
+            Hand-built — set in Newsreader, Hanken Grotesk &amp; Fragment Mono
           </p>
         </footer>
       </div>
