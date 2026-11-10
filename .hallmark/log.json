@@ -1,0 +1,36 @@
+[
+ {
+  "mode": "redesign",
+  "depth": "full",
+  "scope": "page",
+  "shape": "Index-First",
+  "theme": "brand",
+  "genre": "editorial",
+  "axes": "light/roman-serif/cool",
+  "hero": "Banner",
+  "nav": "edge-aligned bar",
+  "footer": "statement over a colophon",
+  "imagery": "one chart of real GitHub data, no photographs",
+  "photos": [],
+  "entry": "index.html",
+  "fingerprint": "Left-margin|Two-column asymmetric|Hairline|Solid|None|None",
+  "sections": [
+   "Hero banner",
+   "Rows with a rail head (Experience)",
+   "Index of projects",
+   "Showcase chart (GitHub)",
+   "Table (Skills)",
+   "Rows (Education)",
+   "Statement band (Contact)"
+  ],
+  "signature": "the ruled notebook margin: section heads in a left rail beside hairline-ruled entries, dates in the figure face",
+  "waived": [
+   "8",
+   "64",
+   "77"
+  ],
+  "draw": "aad62a",
+  "prompt": "a personal portfolio for a full-stack software engineer, for recruiters and engineering leads",
+  "date": "2026-11-10"
+ }
+]

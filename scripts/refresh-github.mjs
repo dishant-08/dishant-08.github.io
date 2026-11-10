@@ -65,7 +65,7 @@ weeks.forEach((week, wi) => {
     const lvl = LEVEL[day.contributionLevel] ?? 0;
     const title =
       day.contributionCount > 0
-        ? `<title>${day.contributionCount} contribution${day.contributionCount === 1 ? "" : "s"} · ${pretty(day.date)}</title>`
+        ? `<title>${day.contributionCount} contribution${day.contributionCount === 1 ? "" : "s"} on ${pretty(day.date)}</title>`
         : "";
     cells += `<rect class="hm-${lvl}" x="${x}" y="${y}" width="${CELL}" height="${CELL}" rx="2.5">${title}</rect>`;
   });
@@ -85,13 +85,10 @@ const dayLabels = [
 const firstDay = weeks[0].contributionDays[0].date;
 const lastWeek = weeks[weeks.length - 1].contributionDays;
 const lastDay = lastWeek[lastWeek.length - 1].date;
-const range = `${MONTHS[monthOf(firstDay)]} ${yearOf(firstDay)} — ${MONTHS[monthOf(lastDay)]} ${yearOf(lastDay)}`;
+const range = `${MONTHS[monthOf(firstDay)]} ${yearOf(firstDay)} to ${MONTHS[monthOf(lastDay)]} ${yearOf(lastDay)}`;
 const asOf = `${MONTHS_LONG[monthOf(lastDay)]} ${yearOf(lastDay)}`;
 const total = cal.totalContributions;
 const totalFmt = total.toLocaleString("en-US");
-const rounded = Math.floor(total / 100) * 100;
-const roundedFmt = rounded.toLocaleString("en-US");
-
 const svg = `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="GitHub contribution calendar, ${range}: ${totalFmt} contributions">${monthLabels}${dayLabels}${cells}</svg>`;
 
 // ── Inject into index.html ───────────────────────────────────────────────────
@@ -114,17 +111,16 @@ html = html.replace(
   /(<span data-gh-asof>)[^<]*(<\/span>)/,
   `$1${asOf}$2`
 );
-// ponytail: attribute-order-sensitive regex; fine while this script owns the markup
-html = html.replace(
-  /(data-count=")\d+(" data-suffix="\+" data-gh-rounded>)[\s\S]*?(<\/p>)/,
-  `$1${rounded}$2\n                ${roundedFmt}+\n              $3`
-);
-
-if (html === before) {
-  console.error("No markers replaced — check index.html markers.");
+if (!/<!-- GH-HEATMAP:START[^>]*-->[\s\S]*?<!-- GH-HEATMAP:END -->/.test(before)) {
+  console.error("No heatmap markers found: check index.html.");
   process.exit(1);
+}
+if (html === before) {
+  // Same data as the last run: nothing to write, and not an error.
+  console.log(`Already up to date: ${totalFmt} contributions (${range}).`);
+  process.exit(0);
 }
 writeFileSync(HTML, html);
 console.log(
-  `Baked ${totalFmt} contributions (${range}); stat band shows ${roundedFmt}+.`
+  `Baked ${totalFmt} contributions (${range}).`
 );

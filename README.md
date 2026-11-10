@@ -2,13 +2,12 @@
 
 Personal portfolio — live at **https://dishant-08.github.io**
 
-Hand-built static site: semantic HTML + Tailwind CSS, no framework. Light/dark theme, Lenis smooth scroll, and a GitHub contribution heatmap baked in at build time from real API data.
+Hand-built static site: semantic HTML + Tailwind CSS, no framework. Light/dark theme, a GitHub contribution heatmap baked in at build time from real API data, and a LaTeX resume.
 
 ## Stack
 
 - HTML + [Tailwind CSS](https://tailwindcss.com) (compiled to `dist/output.css`)
-- Vanilla JS (`js/main.js`) — theme toggle, scrollspy, reveals, scroll progress, stat count-up
-- [Lenis](https://github.com/darkroomengineering/lenis) smooth scroll (CDN)
+- Vanilla JS (`js/main.js`) — theme toggle, mobile menu, scrollspy
 - Type: Newsreader · Hanken Grotesk · Fragment Mono
 
 ## Develop
@@ -33,12 +32,26 @@ The contribution heatmap and counts in `index.html` are generated, not live-fetc
 node scripts/refresh-github.mjs   # needs the `gh` CLI, authenticated
 ```
 
+## Resume
+
+`Dishant_resume.tex` is the source for `Dishant_resume.pdf` (single column, no tables or icons, so applicant tracking systems parse it). Rebuild with any of:
+
+```bash
+tectonic Dishant_resume.tex
+xelatex Dishant_resume.tex
+pdflatex Dishant_resume.tex
+```
+
 ## Structure
 
 ```
-index.html        the site (single page)
-src/input.css     design tokens + components
-js/main.js        interactions
-scripts/          GitHub data refresh
-dist/output.css   compiled CSS (committed for GitHub Pages)
+index.html          the site (single page)
+src/tokens.css      design tokens (colours, type, spacing; light and dark)
+src/base.css        reset and element defaults
+src/input.css       page styles; imports the two files above
+js/main.js          interactions
+scripts/            GitHub data refresh
+dist/output.css     compiled CSS (committed for GitHub Pages)
+Dishant_resume.tex  resume source
+Dishant_resume.pdf  resume, linked from the site
 ```

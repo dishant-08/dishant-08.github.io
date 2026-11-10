@@ -1,0 +1,146 @@
+%-----------------------------------------------------------------------
+% Dishant Sahu - Resume
+% Typography follows the earlier resume: Latin Modern (Computer Modern)
+% serif, small-caps name and skill labels, bold ruled section heads.
+% Single column, no tables, no icons, no graphics, so applicant tracking
+% systems (ATS) read it cleanly.
+%
+% Compile with any of:
+%   tectonic Dishant_resume.tex      (used to build Dishant_resume.pdf)
+%   xelatex  Dishant_resume.tex
+%   pdflatex Dishant_resume.tex
+%-----------------------------------------------------------------------
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage[top=0.42in,bottom=0.42in,left=0.6in,right=0.6in]{geometry}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{lmodern}
+  \input{glyphtounicode}
+  \pdfgentounicode=1            % machine-readable text layer under pdfLaTeX
+\else
+  \usepackage{fontspec}
+  % Two settings keep the PDF text layer clean for ATS parsers:
+  % - common ligatures off, so "ff" and "fi" stay plain letters (with them on,
+  %   "Buffers" extracts as one ligature character);
+  % - kerning off, because tight pairs (T+e, A+W, V+e) made one widely used
+  %   extractor read "AWS" as "A WS" and "Technical" as "T echnical".
+  \setmainfont{lmroman10}[Extension=.otf, UprightFont=*-regular, BoldFont=*-bold,
+    ItalicFont=*-italic, BoldItalicFont=*-bolditalic,
+    SmallCapsFont=lmromancaps10-regular, Ligatures={TeX,NoCommon}, Kerning=Off]
+\fi
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+
+\hypersetup{
+  pdftitle={Dishant Sahu - Full-Stack Software Engineer - Resume},
+  pdfauthor={Dishant Sahu},
+  pdfsubject={Resume: Full-Stack Software Engineer},
+  pdfkeywords={Full-Stack Software Engineer, Full-Stack Developer, Software Engineer, TypeScript, Go, Node.js, NestJS, React, Next.js, PostgreSQL, ScyllaDB, gRPC, Stripe}
+}
+
+% Body size: 10.5pt on 12.5pt leading.
+\renewcommand{\normalsize}{\fontsize{10.5}{12.5}\selectfont}
+\normalsize
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\raggedright
+\raggedbottom
+\urlstyle{same}
+
+% Section headings: bold, one rule beneath (as in the earlier resume).
+\titleformat{\section}{\large\bfseries}{}{0pt}{}[\vspace{-1.5pt}\titlerule]
+\titlespacing*{\section}{0pt}{7pt}{4pt}
+
+\setlist[itemize]{leftmargin=1.2em,labelsep=0.5em,itemsep=1pt,topsep=2.5pt,parsep=0pt,partopsep=0pt,label=\textbullet}
+
+% Dates sit inline on the left, never flushed right with \hfill: text extractors
+% that group by layout read a far-right date out of order.
+% \entry{Organisation or project}{Role}{Dates}{Location or stack}
+\newcommand{\entry}[4]{%
+  {\large\textbf{#1}} \textbar{} \textit{#2}\par
+  {\small #3 \textbar{} #4}\par}
+% \skill{Group}{Items}
+\newcommand{\skill}[2]{\textsc{#1:} #2\par\vspace{1.5pt}}
+
+\begin{document}
+
+%----------------------------- HEADER ----------------------------------
+\begin{center}
+  {\Huge\scshape Dishant Sahu}\par\vspace{3pt}
+  {\scshape Full-Stack Software Engineer \textbar{} Sambalpur, India}\par\vspace{4pt}
+  {\small
+  \href{mailto:dishant.sahu07@gmail.com}{\underline{dishant.sahu07@gmail.com}} \textbar{}
+  \href{https://www.linkedin.com/in/dishant-sahu-b18240244/}{\underline{linkedin.com/in/dishant-sahu-b18240244}} \textbar{}
+  \href{https://github.com/dishant-08}{\underline{github.com/dishant-08}} \textbar{}
+  \href{https://dishant-08.github.io/}{\underline{dishant-08.github.io}}}
+\end{center}
+\vspace{-8pt}
+
+%----------------------------- SUMMARY ---------------------------------
+\section{Summary}
+Full-stack software engineer with 2.5 years of production experience in TypeScript, Go, Node.js, React,
+Next.js, and PostgreSQL. Own the backend of a fleet-telematics platform tracking 50,000+ live vehicles at
+404Minds, and independently built and launched two SaaS products: a healthcare payments platform and an
+AI-powered interview preparation platform.
+
+%---------------------------- EXPERIENCE -------------------------------
+\section{Experience}
+\entry{404Minds Technologies}{Software Developer}{May 2024 -- Present}{Remote}
+\begin{itemize}
+  \item Own the backend, data pipeline, and deployments of a fleet-telematics platform tracking 50,000+ live
+        vehicles: NestJS and Go microservices over gRPC, with ScyllaDB, PostgreSQL, and Redis.
+  \item Ended deployment outages of 9 to 17 minutes: found Nginx routing to dead containers after each
+        release and fixed it with per-request upstream resolution and start-first rollouts (Docker, Ansible).
+  \item Rebuilt trip detection as one deterministic rule for every GPS tracker model after production data
+        showed 22\% of the distance driven by one fleet was missing from its trip reports.
+  \item Fixed ScyllaDB reads that failed outright for any fleet above 100 vehicles, restoring fleet-wide
+        trip, event, and fuel views, and removed a goroutine leak from the real-time tracking stream.
+  \item Wrote Go parsers for three GPS tracker protocol families (Queclink, Aquila OBD-II, IntelliTrac) in the
+        TCP receiver that ingests device data for the platform.
+  \item Built the live fleet map in React and TypeScript with Google Maps marker clustering; merged 875 pull
+        requests and reviewed 170 across 7 production repositories.
+\end{itemize}
+
+%----------------------------- PROJECTS --------------------------------
+\section{Projects}
+\entry{Healthcare Payments SaaS Platform}{Sole Engineer}{Apr 2026 -- Present}{Next.js, React, TypeScript, PostgreSQL, Prisma, Stripe}
+\begin{itemize}
+  \item Designed, built, and launched the whole product alone: patient, provider, and admin portals.
+  \item Built payments that stay correct under failure: Stripe subscriptions, card and ACH payments, and
+        provider payouts are recorded in a double-entry ledger, and a failed payout is reversed automatically.
+  \item Isolated each customer account with PostgreSQL row-level security, verified and de-duplicated every
+        Stripe webhook, and backed releases with 2,700+ unit tests and 249 end-to-end tests.
+\end{itemize}
+\vspace{5pt}
+\entry{AI-Powered Interview Preparation Platform}{Primary Engineer}{Jun 2024 -- Oct 2025}{Next.js, TypeScript, PostgreSQL, Prisma, OpenAI API, Stripe}
+\begin{itemize}
+  \item Built the core product: spoken mock interviews with an AI voice agent, an in-browser code editor for
+        coding rounds, and personalized feedback generated with the OpenAI API.
+  \item Built the practice question bank and progress tracking: coding, multiple-choice, and open-ended problems
+        filterable by company and topic, with scored submission history (Prisma, PostgreSQL, REST API routes).
+  \item Turned it into a paid product with Stripe subscriptions and free trials, user authentication, and an
+        SEO blog and newsletter; wrote 152 of the 204 merged pull requests.
+\end{itemize}
+
+%------------------------------ SKILLS ---------------------------------
+\section{Technical Skills}
+\skill{Languages}{TypeScript, JavaScript, Go (Golang), SQL, HTML, CSS}
+\skill{Backend}{Node.js, NestJS, gRPC, REST APIs, WebSockets, Stripe API}
+\skill{Frontend}{React, Next.js, Tailwind CSS}
+\skill{Databases}{PostgreSQL, ScyllaDB, Redis, Prisma ORM}
+\skill{DevOps and Testing}{Docker, Ansible, Nginx, AWS, Vercel, Git, Jest, Vitest, Playwright}
+
+%----------------------------- EDUCATION -------------------------------
+\section{Education}
+{\large\textbf{Veer Surendra Sai University of Technology (VSSUT)}}\par
+{\small B.Tech, Electronics and Telecommunication Engineering \textbar{} 2019 -- 2023 \textbar{} CGPA: 8.37}\par
+\vspace{4pt}
+{\large\textbf{Vikash Residential School, Bargarh}}\par
+{\small CBSE, Intermediate \textbar{} 2017 -- 2019 \textbar{} Percentage: 90.4\%}\par
+
+\end{document}

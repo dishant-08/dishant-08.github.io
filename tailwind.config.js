@@ -1,26 +1,26 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./index.html", "./src/**/*.{html,js}", "./js/**/*.js"],
-  darkMode: "class",
+  darkMode: ["selector", '[data-theme="dark"]'],
+  // base.css is the reset, and `.container` is its own class there. Utilities
+  // that lean on Tailwind's base-layer variables (ring, shadow, transform)
+  // need `@tailwind base` restored in src/input.css before they are used.
+  corePlugins: { preflight: false, container: false },
   theme: {
     extend: {
+      // Every value is a token from src/tokens.css, so utilities follow the theme.
       colors: {
-        paper: "rgb(var(--c-paper) / <alpha-value>)",
-        surface: "rgb(var(--c-surface) / <alpha-value>)",
-        ink: "rgb(var(--c-ink) / <alpha-value>)",
-        mute: "rgb(var(--c-mute) / <alpha-value>)",
-        line: "rgb(var(--c-line) / <alpha-value>)",
-        accent: "rgb(var(--c-accent) / <alpha-value>)",
-        "accent-deep": "rgb(var(--c-accent-deep) / <alpha-value>)",
+        paper: "var(--color-paper)",
+        surface: "var(--color-paper-2)",
+        ink: "var(--color-ink)",
+        mute: "var(--color-muted)",
+        line: "var(--color-rule)",
+        accent: "var(--color-accent)",
       },
       fontFamily: {
-        display: ["Newsreader", "Georgia", "serif"],
-        sans: ["Hanken Grotesk", "system-ui", "sans-serif"],
-        mono: ["Fragment Mono", "ui-monospace", "monospace"],
-      },
-      maxWidth: {
-        prose2: "44rem",
-        shell: "64rem",
+        display: "var(--font-display)",
+        sans: "var(--font-body)",
+        mono: "var(--font-outlier)",
       },
     },
   },

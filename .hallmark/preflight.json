@@ -1,0 +1,12 @@
+{
+  "scanned": "2026-11-10",
+  "findings": {
+    "fonts": "Newsreader, Hanken Grotesk, Fragment Mono (Google Fonts link in index.html; named in tailwind.config.js)",
+    "palette": "warm paper tokens in src/tokens.css: #FAF7F1 light, #12100E dark, forest accent #17604A / sage #8CC9A9",
+    "motion": "none beyond hover and focus transitions; Lenis smooth scroll removed in the redesign",
+    "spacing": "Hallmark space scale in src/tokens.css",
+    "framework": "static HTML, Tailwind CSS 3 CLI (src/input.css to dist/output.css), vanilla JS"
+  },
+  "preserve": ["palette", "font stack", "theme toggle", "GitHub heatmap and scripts/refresh-github.mjs", "JSON-LD", "Tailwind build pipeline"],
+  "introduce": ["tokens.css and base.css", "Index-First shape", "Banner hero", "notebook rail"]
+}
