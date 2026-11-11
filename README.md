@@ -54,4 +54,5 @@ scripts/            GitHub data refresh
 dist/output.css     compiled CSS (committed for GitHub Pages)
 Dishant_resume.tex  resume source
 Dishant_resume.pdf  resume, linked from the site
+images/             product screenshots (WebP, two widths each)
 ```

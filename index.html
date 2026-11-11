@@ -97,8 +97,6 @@
         },
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Sambalpur",
-          "addressRegion": "Odisha",
           "addressCountry": "IN"
         },
         "sameAs": [
@@ -167,87 +165,138 @@
 
     <main id="main">
       <section class="hero" id="top">
-        <div class="container hero__grid">
-          <h1>
-            Dishant Sahu<span class="visually-hidden">, </span>
-            <span class="hero__role">Full-Stack Software Engineer</span>
-          </h1>
-          <div class="hero__pitch">
-            <p class="lead">
-              I build and ship production systems: realtime telematics for
-              50,000+ live vehicles, plus payments and AI products.
+        <div class="container">
+          <div class="split hero__grid">
+            <div class="hero__text">
+              <p class="kicker">India (IST) &middot; Open to full-time roles</p>
+              <h1>
+                <span class="visually-hidden">Dishant Sahu, </span>Full-stack
+                software engineer who builds and ships real production systems.
+              </h1>
+              <p class="lead">
+                Realtime telematics for 50,000+ live vehicles at 404Minds, plus a
+                healthcare payments platform and an AI interview product built
+                independently.
+              </p>
+              <div class="actions">
+                <a href="Dishant_resume.pdf" download class="btn">Download Resume</a>
+                <a href="mailto:dishant.sahu07@gmail.com" class="btn btn--quiet">Email Me</a>
+              </div>
+            </div>
+
+            <figure class="flow">
+              <figcaption>
+                <b>Fleet telematics at 404Minds</b>
+                <span>From tracker packet to live map. I own the backend, the data pipeline and deployments.</span>
+              </figcaption>
+              <ol class="flow__steps">
+                <li>
+                  <span class="flow__name">GPS trackers</span>
+                  <span class="flow__tech">50,000+ vehicles</span>
+                  <span class="flow__desc">Queclink, Aquila, IntelliTrac and other device families</span>
+                  <span class="flow__via"><span class="visually-hidden">sends over </span>TCP</span>
+                </li>
+                <li>
+                  <span class="flow__name">Receiver</span>
+                  <span class="flow__tech">Go</span>
+                  <span class="flow__desc">Decodes each tracker protocol</span>
+                  <span class="flow__via"><span class="visually-hidden">sends over </span>gRPC</span>
+                </li>
+                <li>
+                  <span class="flow__name">Telemetry service</span>
+                  <span class="flow__tech">Go</span>
+                  <span class="flow__desc">Detects trips, geofence crossings and alerts. Stores to ScyllaDB, PostgreSQL and Redis</span>
+                  <span class="flow__via"><span class="visually-hidden">serves over </span>gRPC</span>
+                </li>
+                <li>
+                  <span class="flow__name">API</span>
+                  <span class="flow__tech">NestJS</span>
+                  <span class="flow__desc">Accounts, reports and live updates</span>
+                  <span class="flow__via"><span class="visually-hidden">pushes over </span>WebSocket</span>
+                </li>
+                <li>
+                  <span class="flow__name">Live map</span>
+                  <span class="flow__tech">React</span>
+                  <span class="flow__desc">Every vehicle&rsquo;s position in real time</span>
+                </li>
+              </ol>
+            </figure>
+          </div>
+
+          <ul class="stats" aria-label="Key figures">
+            <li><b>2.5 yrs</b> <span>of production experience</span></li>
+            <li><b>50,000+</b> <span>vehicles tracked live</span></li>
+            <li><b>875</b> <span>pull requests merged at 404Minds</span></li>
+            <li><b>2</b> <span>SaaS products built and launched</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section" id="experience">
+        <div class="container">
+          <h2>Experience</h2>
+
+          <div class="split role">
+            <div>
+              <h3>Software Developer, 404Minds Technologies</h3>
+              <p class="meta"><span class="fig"><time datetime="2024-05">May 2024</time> to present</span> &middot; Remote</p>
+              <ul class="chips" aria-label="Technologies">
+                <li>Go</li><li>TypeScript</li><li>NestJS</li><li>gRPC</li><li>ScyllaDB</li><li>PostgreSQL</li><li>Redis</li><li>React</li><li>Docker</li><li>Ansible</li><li>Nginx</li>
+              </ul>
+            </div>
+            <p class="role__sum">
+              I own the backend, data pipeline and deployments of a fleet
+              tracking platform that follows 50,000+ vehicles live. I also
+              built its live map in React and added support for three more GPS
+              tracker families.
             </p>
-            <div class="actions">
-              <a href="Dishant_resume.pdf" download class="btn">Download Resume</a>
-              <a href="mailto:dishant.sahu07@gmail.com" class="btn btn--quiet">Email Me</a>
-            </div>
           </div>
+
+          <ul class="impact">
+            <li>
+              <p class="impact__fig">9&ndash;17 min</p>
+              <h4>Zero-downtime deployments</h4>
+              <p>
+                Every release used to take the API offline for 9 to 17 minutes.
+                Releases now go out with no interruption.
+              </p>
+              <p class="impact__tech">Nginx, Docker, Ansible</p>
+            </li>
+            <li>
+              <p class="impact__fig">22%</p>
+              <h4>Complete trip reports</h4>
+              <p>
+                22% of one fleet&rsquo;s driven distance was missing from its
+                reports. I rebuilt trip detection to work for every GPS tracker
+                model.
+              </p>
+              <p class="impact__tech">Go, GPS telemetry</p>
+            </li>
+            <li>
+              <p class="impact__fig">100+</p>
+              <h4>Large fleets unblocked</h4>
+              <p>
+                Fleet-wide reports failed for any fleet above 100 vehicles. They
+                now load at any fleet size.
+              </p>
+              <p class="impact__tech">Go, ScyllaDB</p>
+            </li>
+          </ul>
         </div>
       </section>
 
-      <section class="section section--ruled section--flush" id="experience">
+      <section class="section section--band" id="projects">
         <div class="container">
-          <div class="cols">
-            <div class="rail"><h2>Experience</h2></div>
-            <div class="body">
-              <article class="entry">
-                <div class="entry__main">
-                  <h3>Software Developer, 404Minds Technologies</h3>
-                  <p>
-                    I own the backend of a fleet tracking platform that follows
-                    50,000+ vehicles live. GPS trackers send data, Go and NestJS
-                    services process it, and positions reach the map in real
-                    time.
-                  </p>
-                  <ul class="facts">
-                    <li>
-                      <strong>Deployments no longer take the API down.</strong>
-                      Nginx kept routing to dead containers after each release,
-                      causing outages of 9 to 17 minutes. I fixed how it finds
-                      the new containers and the order they roll out.
-                    </li>
-                    <li>
-                      <strong>Trip reports are complete.</strong> One fleet was
-                      missing 22% of its driven distance, so I rebuilt trip
-                      detection as one rule that works for every tracker model.
-                    </li>
-                    <li>
-                      <strong>Large fleets load.</strong> Database reads failed
-                      outright above 100 vehicles. I fixed the queries and a
-                      leak in the live tracking stream.
-                    </li>
-                    <li>
-                      <strong>Three more tracker families work.</strong> I
-                      wrote the Go parsers for Queclink, Aquila and IntelliTrac
-                      devices in the receiver that feeds the platform.
-                    </li>
-                  </ul>
-                  <p class="meta">Go, TypeScript, NestJS, gRPC, ScyllaDB, PostgreSQL, Redis, React</p>
-                </div>
-                <div class="entry__side meta">
-                  <p class="fig"><time datetime="2024-05">May 2024</time> to present</p>
-                  <p>Remote</p>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section section--wide" id="projects">
-        <div class="container">
-          <div class="head">
+          <div class="section__head">
             <h2>Projects</h2>
             <p class="lead">Two SaaS products I built independently, from first commit to production.</p>
           </div>
 
-          <article class="case">
-            <div class="case__name">
+          <article class="split case">
+            <div class="case__text">
               <h3>Healthcare payments SaaS platform</h3>
-              <p class="meta">Sole engineer</p>
-            </div>
-            <div class="case__main">
-              <p>
+              <p class="meta">Sole engineer &middot; <span class="fig"><time datetime="2026-04">Apr 2026</time> to present</span></p>
+              <p class="case__sum">
                 A platform where patients pay healthcare providers:
                 subscriptions, card and bank payments, and payouts. I designed,
                 built and launched all of it.
@@ -268,18 +317,46 @@
                   tests and 249 end-to-end tests, run in two browser engines.
                 </li>
               </ul>
+              <ul class="chips" aria-label="Technologies">
+                <li>Next.js</li><li>React</li><li>TypeScript</li><li>PostgreSQL</li><li>Prisma</li><li>Stripe</li>
+              </ul>
             </div>
-            <p class="case__date meta fig"><time datetime="2026-04">Apr 2026</time> to present</p>
-            <p class="case__stack meta">Next.js, TypeScript, PostgreSQL, Prisma, Stripe</p>
+            <figure class="case__fig">
+              <div class="shots">
+                <a class="browser" href="images/payments-desktop-1920.webp" target="_blank" rel="noopener" title="Open the healthcare payments dashboard at full size">
+                  <img
+                    src="images/payments-desktop-1920.webp"
+                    srcset="images/payments-desktop-960.webp 960w, images/payments-desktop-1920.webp 1920w"
+                    sizes="(min-width: 80rem) 560px, (min-width: 60rem) 46vw, 92vw"
+                    width="1920"
+                    height="1173"
+                    alt="Member dashboard of the healthcare payments platform on desktop: an available wallet balance of $815.00, a monthly plan credit and two amounts set aside in recent activity, and two savings goals at 33 and 1 percent."
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </a>
+                <div class="phone">
+                  <img
+                    src="images/payments-phone-520.webp"
+                    srcset="images/payments-phone-260.webp 260w, images/payments-phone-520.webp 520w"
+                    sizes="(min-width: 80rem) 124px, (min-width: 60rem) 10vw, 20vw"
+                    width="520"
+                    height="1050"
+                    alt="The same dashboard on a phone: the wallet balance, an Add funds button and the first savings goal."
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              </div>
+              <figcaption class="meta">The member dashboard on desktop and phone, from the staging environment.</figcaption>
+            </figure>
           </article>
 
-          <article class="case">
-            <div class="case__name">
+          <article class="split case">
+            <div class="case__text">
               <h3>AI interview preparation platform</h3>
-              <p class="meta">Primary engineer</p>
-            </div>
-            <div class="case__main">
-              <p>
+              <p class="meta">Primary engineer &middot; <span class="fig"><time datetime="2024-06">Jun 2024</time> to <time datetime="2025-10">Oct 2025</time></span></p>
+              <p class="case__sum">
                 A web app for practising technical interviews with AI. It asks
                 questions aloud, listens to the answers and returns written
                 feedback. I wrote 152 of its 204 merged pull requests.
@@ -301,16 +378,46 @@
                   search traffic.
                 </li>
               </ul>
+              <ul class="chips" aria-label="Technologies">
+                <li>Next.js</li><li>TypeScript</li><li>PostgreSQL</li><li>Prisma</li><li>OpenAI</li><li>Stripe</li>
+              </ul>
             </div>
-            <p class="case__date meta fig"><time datetime="2024-06">Jun 2024</time> to <time datetime="2025-10">Oct 2025</time></p>
-            <p class="case__stack meta">Next.js, TypeScript, PostgreSQL, Prisma, OpenAI, Stripe</p>
+            <figure class="case__fig">
+              <div class="shots">
+                <a class="browser" href="images/interview-desktop-1920.webp" target="_blank" rel="noopener" title="Open the voice interview at full size">
+                  <img
+                    src="images/interview-desktop-1920.webp"
+                    srcset="images/interview-desktop-960.webp 960w, images/interview-desktop-1920.webp 1920w"
+                    sizes="(min-width: 80rem) 560px, (min-width: 60rem) 46vw, 92vw"
+                    width="1920"
+                    height="1200"
+                    alt="A voice interview in the AI interview platform on desktop: the question on the left with the AI interviewer, a live transcript of the interviewer and the candidate in the middle, and a countdown of the time left."
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </a>
+                <div class="phone">
+                  <img
+                    src="images/interview-phone-520.webp"
+                    srcset="images/interview-phone-260.webp 260w, images/interview-phone-520.webp 520w"
+                    sizes="(min-width: 80rem) 124px, (min-width: 60rem) 10vw, 20vw"
+                    width="520"
+                    height="1125"
+                    alt="The same voice interview on a phone: the question, the spoken answer transcribed as it happens, and the interviewer's follow-up question."
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              </div>
+              <figcaption class="meta">A voice interview in progress on desktop and phone, running locally with a sample conversation.</figcaption>
+            </figure>
           </article>
         </div>
       </section>
 
-      <section class="section section--band" id="github">
+      <section class="section" id="github">
         <div class="container">
-          <div class="head">
+          <div class="section__head">
             <h2>A year on GitHub</h2>
             <p class="lead">
               <span data-gh-total>3,303</span> contributions in the
@@ -333,75 +440,62 @@
           <p class="chart__note">
             Most of it is private client and product work. GitHub counts it, and
             <a href="https://github.com/dishant-08" target="_blank" rel="noopener noreferrer">the profile</a>
-            confirms it.
+            confirms it. At 404Minds alone: 875 pull requests merged and 170
+            peer reviews across 7 production repositories, counted from the
+            GitHub API on 10 November 2026.
           </p>
-          <ul class="tally">
-            <li><b>875</b> <span>pull requests merged at 404Minds</span></li>
-            <li><b>170</b> <span>peer pull requests reviewed</span></li>
-            <li><b>7</b> <span>production repositories</span></li>
-          </ul>
-          <p class="tally__source meta">Counted from the GitHub API on 10 November 2026.</p>
         </div>
       </section>
 
-      <section class="section section--wide" id="skills">
+      <section class="section section--ruled" id="skills">
         <div class="container">
-          <div class="cols">
-            <div class="rail"><h2>Skills</h2></div>
-            <dl class="spec body">
-              <div><dt>Languages</dt><dd>TypeScript, JavaScript, Go, SQL</dd></div>
-              <div><dt>Backend</dt><dd>Node.js, NestJS, gRPC, REST APIs, WebSockets, Stripe</dd></div>
-              <div><dt>Frontend</dt><dd>React, Next.js, Tailwind CSS</dd></div>
-              <div><dt>Databases</dt><dd>PostgreSQL, ScyllaDB, Redis, Prisma</dd></div>
-              <div><dt>DevOps and testing</dt><dd>Docker, Ansible, Nginx, AWS, Vercel, Jest, Playwright</dd></div>
-            </dl>
-          </div>
+          <h2>Skills</h2>
+          <dl class="skills">
+            <div><dt>Languages</dt><dd>TypeScript</dd><dd>JavaScript</dd><dd>Go</dd><dd>SQL</dd></div>
+            <div><dt>Backend</dt><dd>Node.js</dd><dd>NestJS</dd><dd>gRPC</dd><dd>REST APIs</dd><dd>WebSockets</dd><dd>Stripe</dd></div>
+            <div><dt>Frontend</dt><dd>React</dd><dd>Next.js</dd><dd>Tailwind CSS</dd></div>
+            <div><dt>Databases</dt><dd>PostgreSQL</dd><dd>ScyllaDB</dd><dd>Redis</dd><dd>Prisma</dd></div>
+            <div><dt>DevOps and testing</dt><dd>Docker</dd><dd>Ansible</dd><dd>Nginx</dd><dd>AWS</dd><dd>Vercel</dd><dd>Jest</dd><dd>Playwright</dd></div>
+          </dl>
         </div>
       </section>
 
       <section class="section section--ruled" id="education">
         <div class="container">
-          <div class="cols">
-            <div class="rail"><h2>Education</h2></div>
-            <div class="body">
-              <article class="entry">
-                <div class="entry__main">
-                  <h3>Veer Surendra Sai University of Technology</h3>
-                  <p>B.Tech, Electronics and Telecommunication Engineering. CGPA 8.37.</p>
-                </div>
-                <div class="entry__side meta">
-                  <p class="fig"><time datetime="2019">2019</time> to <time datetime="2023">2023</time></p>
-                  <p>Sambalpur, India</p>
-                </div>
-              </article>
-
-              <article class="entry">
-                <div class="entry__main">
-                  <h3>Vikash Residential School, Bargarh</h3>
-                  <p>CBSE, Intermediate. 90.4%.</p>
-                </div>
-                <div class="entry__side meta">
-                  <p class="fig"><time datetime="2017">2017</time> to <time datetime="2019">2019</time></p>
-                </div>
-              </article>
-            </div>
+          <h2>Education</h2>
+          <div class="split edu">
+            <article>
+              <h3>Veer Surendra Sai University of Technology</h3>
+              <p>B.Tech, Electronics and Telecommunication Engineering. CGPA 8.37.</p>
+              <p class="meta"><span class="fig"><time datetime="2019">2019</time> to <time datetime="2023">2023</time></span></p>
+            </article>
+            <article>
+              <h3>Vikash Residential School</h3>
+              <p>CBSE, Intermediate. 90.4%.</p>
+              <p class="meta"><span class="fig"><time datetime="2017">2017</time> to <time datetime="2019">2019</time></span></p>
+            </article>
           </div>
         </div>
       </section>
 
       <section class="section section--band contact" id="contact">
         <div class="container">
-          <div class="cols">
-            <div class="rail"><h2>Contact</h2></div>
-            <div class="body">
-              <p class="statement">Open to full-time roles and serious product work. Email is fastest.</p>
+          <div class="split contact__grid">
+            <div>
+              <h2>Contact</h2>
+              <p class="lead">Open to full-time roles and serious product work. Email is fastest.</p>
+            </div>
+            <div>
               <a class="contact__mail" href="mailto:dishant.sahu07@gmail.com">dishant.sahu07@gmail.com</a>
+              <div class="actions">
+                <a href="Dishant_resume.pdf" download class="btn">Download Resume</a>
+              </div>
               <ul class="contact__links" aria-label="Profiles">
                 <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/dishant-08">GitHub</a></li>
                 <li><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/dishant-sahu-b18240244/">LinkedIn</a></li>
                 <li><a target="_blank" rel="noopener noreferrer" href="https://twitter.com/sahu_dishant">Twitter</a></li>
               </ul>
-              <p class="meta">Sambalpur, India (IST, UTC+05:30)</p>
+              <p class="meta">India (IST, UTC+05:30)</p>
             </div>
           </div>
         </div>
